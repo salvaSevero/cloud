@@ -7,7 +7,7 @@
 [data-md-color-scheme="slate"] {
     --md-primary-fg-color:        #0077b6;
 
-    // Default color shades 
+    /* Default color shades */
    --md-default-fg-color:               hsla(0, 0%, 100%, 1); 
    --md-default-fg-color--light:        hsla(0, 0%, 100%, 0.87); 
    --md-default-fg-color--lighter:      hsla(0, 0%, 100%, 0.32); 
@@ -17,19 +17,19 @@
    --md-default-bg-color--lighter:      hsla(232, 15%, 21%, 0.26); 
    --md-default-bg-color--lightest:     hsla(232, 15%, 21%, 0.07); 
   
-   // Code color shades 
+   /* Code color shades */ 
    --md-code-bg-color:                  hsla(232, 15%, 18%, 1); 
    --md-code-fg-color:                  hsla(60, 30%, 96%, 1); 
   
-   // Text color shades 
+   /* Text color shades  */
    --md-text-color:                     var(--md-default-fg-color--light); 
    --md-text-link-color:                var(--md-primary-fg-color); 
   
-   // Admonition color shades 
+   /* Admonition color shades  */
    --md-admonition-bg-color:            hsla(0, 0%, 100%, 0.025); 
    --md-admonition-fg-color:            var(--md-default-fg-color); 
   
-   // Footer color shades 
+   /* Footer color shades */
    --md-footer-bg-color:                hsla(232, 15%, 12%, 0.87); 
    --md-footer-bg-color--dark:          hsla(232, 15%, 10%, 1); 
   }
@@ -52,7 +52,7 @@
   }
 
   h3 {
-    color: #c6eb34;
+    color: #eb6e34;
   }
 
   table {
@@ -68,3 +68,10 @@
   font-size: 15px;
 }
 
+.md-main__inner.md-grid {
+    max-width: initial;
+}
+
+.md-nav{
+  font-weight: bold;
+}

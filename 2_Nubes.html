@@ -355,6 +355,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#openstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenStack.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#modelos-y-servicios" class="md-nav__link">
     <span class="md-ellipsis">
       Modelos y Servicios.
@@ -367,6 +376,15 @@
   <a href="#tipos-de-nubes" class="md-nav__link">
     <span class="md-ellipsis">
       Tipos de Nubes.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#costes-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Costes en la Nube.
     </span>
   </a>
   
@@ -428,35 +446,55 @@
 
 
 <div><h1 id="computacion-en-la-nube">Computación en la Nube.<a class="headerlink" href="#computacion-en-la-nube" title="Permanent link">¶</a></h1>
-<p>Entendemos por <ins class="critic">Computación en la Nube</ins> hacer uso de infraestructura (almacenamiento, CPUS, RAM, ancho de banda) y servicios (bases de datos, firewalls, servicios DNS, ) de terceros para gestionar, bajo nuestra solicitud y pagando por uso.</p>
-<p>Esto permite:</p>
+<p>Entendemos por <ins class="critic">Computación en la Nube</ins> hacer uso de infraestructura (almacenamiento, CPUS, RAM, ancho de banda) y servicios (bases de datos, firewalls, servicios DNS, ) de terceros para gestionar, <mark class="critic">bajo nuestra solicitud y pagando por uso</mark>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Ventajas</p>
+<p>💥 <strong>Escalabilidad</strong>: Si necesito ampliar o reducir cualquier componente lo puedo hacer a través de unos pocos clicks. Puedo incrementar/decrementar los recursos según mis necesidades: cantidad de servidores, balanceadores de carga, no estoy limitado por falta de espacio físico o por falta de stock al no haber previsto algún acontecimiento, etc.</p>
+<p>💥 <strong>Centralizado</strong>: Se configura cualquier servicio, independientemente del tipo o de la localización desde la misma interfaz.</p>
+<p>💥 <strong>Agilidad</strong>: Con una serie de clicks podemos levantar y configurar un servidor (No es necesario montarlo y cablearlo físicamente).</p>
+<p>💥 <strong>Control de Coste</strong>: Se paga por uso del servicio, por ejemplo pagaremos dependiendo del uso que hagamos del ancho de banda, o del tiempo que esté la CPU encendida.</p>
+<p>💥 <strong>Ahorro Inicial</strong>: Inversión inicial es mejor al no tener que comprar el hardware y parte del software. </p>
+<p>💥 <strong>Menor Mantenimiento</strong>: No debes destinar recursos de tu empresa al mantenimiento de la infraestructura: Temperatura del CPD, redundancia del sistema eléctrico, mantenimiento del cableado, electricidad, etc.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Desventajas</p>
+<p>💥 Si no controlas bien tus servidores o si no diseñas una buena arquitectura en la nube el coste se puede disparar.</p>
+<p>💥 Necesitas de gente con conocimientos específicos de la plataforma para un despliegue eficiente y adecuado.</p>
+<p>💥 Los datos sensibles están almacenados en máquinas que realmente no son propiedad de la empresa, incluso puede que se encuentren en otro país y no se rigan por las mismas normativas, por ejemplo no es la misma normativa de protección de datos aquí que en USA.</p>
+</div>
+<h2 id="openstack">OpenStack.<a class="headerlink" href="#openstack" title="Permanent link">¶</a></h2>
+<p>OpenStack es un software de <ins class="critic">código abierto</ins> que permite:</p>
 <ul>
 <li>
-<p><strong>Flexibilidad</strong>: Si necesito ampliar o reducir cualquier componente lo puedo hacer a través de unos pocos clicks. Se paga por uso del servicio, por ejemplo pagaremos dependiendo del uso que hagamos del ancho de banda, o del tiempo que esté la CPU encendida.</p>
+<p>Crear y gestionar infraestructuras de nube privada y pública.  </p>
 </li>
 <li>
-<p><strong>Escalabilidad</strong>: Puedo aumentar la cantidad de servidores, balanceadores de carga en cualquier momento. No estoy limitado por falta de espacio físico o por falta de stock al no haber previsto algún acontecimiento.</p>
-</li>
-<li>
-<p><strong>Centralizado</strong>: Se configura cualquier servicio, independientemente del tipo o de la localización desde la misma interfaz.</p>
+<p>Proporciona herramientas para la gestión de recursos como computación, almacenamiento y redes, todo de manera escalable y flexible.</p>
 </li>
 </ul>
+<div class="admonition warning">
+<p><strong>OpenStack es el software por debajo que permite:</strong></p>
+<p>💥 Generar las instancias de máquinas virtuales usando diferentes recursos (CPU, RAM, disco, ...) de servidores físicos.</p>
+<p>💥 Manejar el almacenamiento asociado a cada máquina virtual.</p>
+<p>💥 Crear redes virtuales para asociar e interconectar las máquinas entre ellas y a través de Internet cuando sea necesario.</p>
+</div>
+<p>Existen otros software como OpenStack: VMware vSphere, Microsoft Azure Stack, Apache CloudStack, Proxmox VE, ...</p>
 <h2 id="modelos-y-servicios">Modelos y Servicios.<a class="headerlink" href="#modelos-y-servicios" title="Permanent link">¶</a></h2>
 <center>
 <figure>
-  <img src="imagenes/nube/1.png" width="700">
+  <img src="imagenes/nube/6.png" width="800">
 </figure>
 </center>
 
 <ul>
 <li>
-<p><mark class="critic">IaaS (Infraestructura como Servicio)</mark>: Ofrece recursos físisos (hardware) accesibles desde Internet como servidores (RAM, Disco, CPU) además de la interconexión de red entre ellos.</p>
+<p><mark class="critic"><strong>IaaS (Infraestructura como Servicio)</strong></mark>: Ofrece recursos físisos (<ins class="critic"><strong>hardware</strong></ins>) accesibles desde Internet como servidores (RAM, Disco, CPU) además de la interconexión de red entre ellos.</p>
 </li>
 <li>
-<p><mark class="critic">PaaS (Plataforma como Servicio)</mark>:  Ofrece un entorno completo para el desarrollo, la ejecución y la gestión de aplicaciones (<ins class="critic">Desarrollo Software</ins>). Es decir, ya no solo estamos contratando el hardware si no que también nos gestionan el tener instalado un sistema operativo, un entorno de programación (IDE), las actualizaciones, los paquetes de programación necesarias, el despliegue de la base de datos, etc.</p>
+<p><mark class="critic"><strong>PaaS (Plataforma como Servicio)</strong></mark>:  Es un entorno completo para el desarrollo, la ejecución y gestión de aplicaciones (<ins class="critic"><strong>Desarrollo Software</strong></ins>). Es decir, ya no solo estamos contratando el hardware si no que también nos gestionan el tener instalado un sistema operativo, un entorno de programación (IDE), las actualizaciones, los paquetes de programación necesarias, el despliegue de la base de datos, etc.</p>
 </li>
 <li>
-<p><mark class="critic">SaaS (Software como Servicio)</mark>: Permite que el proveedor te despliegue y gestione (actualizaciones, corrección de errores, mantenimiento, ...) una aplicación a la cual los clientes acceden normalmente mediante web o una API.</p>
+<p><mark class="critic"><strong>SaaS (Software como Servicio)</strong></mark>: Permite que el proveedor te despliegue y gestione (actualizaciones, corrección de errores, mantenimiento, ...) una aplicación a la cual los clientes acceden normalmente mediante web o una API. Son las <ins class="critic"><strong>aplicaciones basadas en la nube</strong></ins></p>
 </li>
 </ul>
 <center>
@@ -472,28 +510,32 @@
 <p>Son las más extendidas.</p>
 </li>
 <li>
-<p>Los servidores son propiedad de terceros (Amazon, Microsoft, Google).</p>
+<p>Los servidores son propiedad de terceros (Amazon -AWS, Microsoft - Azure, Google).</p>
 </li>
 <li>
 <p>Se accede a dichos recurso a través de Internet (red pública).</p>
 </li>
-<li>
-<p>Ejemplos: AWS, Azure, Google Cloud</p>
-</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Ventajas</p>
-<p>💥 Inversión inicial es mejor al no tener que comprar el hardware y parte del software. </p>
-<p>💥 En teoría pagas por lo que necesitas/usas.</p>
-<p>💥 Es muy fácilmente escalable, por ejemplo para aumentar la CPU, RAM, Almacenamiento, Ancho de Banda, etc.</p>
-<p>💥 Te olvidas del mantenimiento de la infraestructura: Temperatura del CPD, coste y redundancia del sistema eléctrico, mantenimiento del cableado, etc.</p>
-<p>💥 El despliegue de aplicaciones y servicios es mucho más rápido.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Desventajas</p>
-<p>💥 Si no controlas bien tus servidores o si no diseñas una buena arquitectura en la nube el coste se puede disparar.</p>
-<p>💥 Necesitas de gente con conocimientos específicos para un despliegue eficiente y adecuado.</p>
-<p>💥 Los datos sensibles están almacenados en máquinas que realmente no son propiedad de la empresa, incluso puede que se encuentren en otro país y no se rigan por las mismas normativas, por ejemplo no es la misma normativa de protección de datos aquí que en USA.</p>
+<div class="admonition example">
+<p class="admonition-title">Ejemplos</p>
+<p></p><center>
+<figure>
+<img src="imagenes/nube/1.avif" width="100">
+<figcaption>Amazon AWS</figcaption>
+</figure>
+</center>
+<p></p><center>
+<figure>
+<img src="imagenes/nube/3.png" width="100">
+<figcaption>Microsoft Azure</figcaption>
+</figure>
+</center>
+<p></p><center>
+<figure>
+<img src="imagenes/nube/4.png" width="100">
+<figcaption>Google Cloud</figcaption>
+</figure>
+</center>
 </div>
 <h3 id="nubes-privadas">Nubes Privadas.<a class="headerlink" href="#nubes-privadas" title="Permanent link">¶</a></h3>
 <ul>
@@ -509,8 +551,8 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Ventajas</p>
-<p>💥 Mayor flexibilidad y control de los recursos. Al pertenecer a la empresa no se compartirán recursos con terceros.</p>
-<p>💥 Mayor escalabilidad en cuanto a que no dependemos de las limitaciones de terceros. Esto siempre será bueno si nuestra organización tiene el poder económico suficiente.</p>
+<p>💥 Mayor flexibilidad y control de los recursos. Al pertenecer a la empresa no se compartirán recursos con terceros, es decir, si levantamos un servicio en un servidor, sabes que todo los recursos del servidor están destinados a uno o varios servicios de la misma empresa, del cual además tenemos el control 100%.</p>
+<p>💥 Mayor escalabilidad en cuanto a que no dependemos de las limitaciones de terceros. Esto siempre será bueno si nuestra organización tiene el poder económico muy grande.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Desventajas</p>
@@ -518,6 +560,7 @@
 <p>💥 Necesitas mucha más personal cualificado para el despliegue y mantenimiento de hardware/software.</p>
 </div>
 <div class="admonition danger">
+<p class="admonition-title">Nubes Privadas Virtuales</p>
 <p>Se pueden desplegar nubes privadas virtuales en nubes públicas.</p>
 </div>
 <h3 id="nubes-hibridas">Nubes Híbridas.<a class="headerlink" href="#nubes-hibridas" title="Permanent link">¶</a></h3>
@@ -533,6 +576,46 @@
 <div class="admonition warning">
 <p class="admonition-title">Desventajas</p>
 <p>💥 Necesitas gente con conocimientos de más de una nube pública, lo que hace que la gestión pueda ser más complicada.</p>
+</div>
+<h2 id="costes-en-la-nube">Costes en la Nube.<a class="headerlink" href="#costes-en-la-nube" title="Permanent link">¶</a></h2>
+<p>Uno de los apartados más importantes como arquitectos/diseñadores de entornos en un sistema en la nube es el <mark class="critic">control/cálculo de costes</mark>.</p>
+<p>Para ello debemos tener dos cosas en cuenta:</p>
+<p><strong>1.</strong> Cuánto nos vamos a ahorrar de no montar el sistema físicamente: servidores, cableado, electricidad, refrigeración, personal de mantenimiento, etc.</p>
+<center>
+    <figure>
+    <img src="imagenes/nube/5.png" width="800">
+    <figcaption>Costes de levantar servidores en local.</figcaption>
+    </figure>
+</center>
+
+<p><strong>2.</strong> Calcular aproximadamente cuánto va a costar mensualmente el tener funcionando el servicio en la plataforma Cloud que hayamos elegido.</p>
+<h3 id="calculadora-de-costes">Calculadora de costes.<a class="headerlink" href="#calculadora-de-costes" title="Permanent link">¶</a></h3>
+<p>La mayoría de plataformas de Cloud Computing nos permiten hacer uso de una <ins class="critic">Calculadora de Costes</ins> para ver en el tiempo cuanto nos costaría levantar los servicios que tenemos en mente.</p>
+<p>Habitualmente hay 4 aspectos que son los que generan el precio final de un servidor/servicio:</p>
+<ul>
+<li>
+<p><strong>Procesamiento</strong>: Se refiere a la cantidad y calidad de las CPUs y Memoria RAM seleccionadas. Se suele cobrar únicamente cuando la máquina está encendida (se cobra por uso).</p>
+</li>
+<li>
+<p><strong>Almacenamiento</strong>: Dependiendo de la calidad y capacidad del almacenamiento seleccionado. Este cobro es constante pues aunque desconectemos la máquina el almacenamiento sigue siendo usado.</p>
+</li>
+<li>
+<p><strong>Red</strong>: Suele acarrear costes por el tráfico de salida que genere nuestro servicio. </p>
+</li>
+<li>
+<p><strong>Licencias</strong>: En caso de que estemos haciendo uso de algún software con licencias de pago.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Calculadoras</p>
+<p>🌩️ <a href="https://calculator.aws/#/"><strong>Caluladora AWS</strong></a></p>
+<p>🌩️ <a href="https://azure.microsoft.com/en-us/pricing/calculator/"><strong>Caluladora AZURE</strong></a></p>
+<p>🌩️ <a href="https://cloud.google.com/products/calculator?hl=es"><strong>Caluladora GOOGLE CLOUD</strong></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Escalar los Servicios</p>
+<p><strong>Nuestros <mark class="critic">requisitos</mark> como empresa pueden variar a lo largo de las semanas o incluso en el mismo día.</strong></p>
+<p><strong>Por ello se pueden <mark class="critic">automatizar procesos</mark> que nos permitan ampliar los recursos cuando la demanda sea mayor y reducirlos cuando sea menor, ahorrando así costes, al no pagar de más por un sistema sobredimensionado.</strong></p>
 </div></div>
 
 
@@ -583,10 +666,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "toc.follow", "navigation.indexes", "content.code.copy", "navigation.instant", "navigation.instant.progress", "navigation.tracking"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
