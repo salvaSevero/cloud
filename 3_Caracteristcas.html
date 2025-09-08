@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/cloud/1_ComandosDocker.html">
+        <link rel="canonical" href="https://salvasevero.github.io/cloud/3_Caracteristcas.html">
       
       
-        <link rel="prev" href="3_Caracteristcas.html">
+        <link rel="prev" href="2_Nubes.html">
       
+      
+        <link rel="next" href="1_ComandosDocker.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Docker - Introducción a la Nube Pública.</title>
+        <title>Características - Introducción a la Nube Pública.</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comandos-basicos-en-docker" class="md-skip">
+        <a href="#caracteristicas" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker
+              Características
             
           </span>
         </div>
@@ -325,29 +327,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="3_Caracteristcas.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Características
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -365,7 +344,7 @@
   
   
   <span class="md-ellipsis">
-    Docker
+    Características
     
   </span>
   
@@ -373,12 +352,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="1_ComandosDocker.html" class="md-nav__link md-nav__link--active">
+      <a href="3_Caracteristcas.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Docker
+    Características
     
   </span>
   
@@ -401,27 +380,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comandos" class="md-nav__link">
+  <a href="#regiones-y-zonas-de-disponibilidad" class="md-nav__link">
     <span class="md-ellipsis">
-      Comandos.
+      Regiones y Zonas de disponibilidad
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejemplos-basicos-en-docker" class="md-nav__link">
+  <a href="#modelo-de-responsabilidad-compartida" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejemplos Básicos en Docker
+      Modelo de Responsabilidad Compartida.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#como-trabajar-en-clasecasa-usando-docker" class="md-nav__link">
+  <a href="#costes-en-la-nube" class="md-nav__link">
     <span class="md-ellipsis">
-      ¿Cómo trabajar en clase/casa usando docker?
+      Costes en la Nube.
     </span>
   </a>
   
@@ -431,6 +410,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1_ComandosDocker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -459,155 +461,114 @@
 
 
 
-<div><h1 id="comandos-basicos-en-docker"><strong>Comandos Básicos en Docker</strong><a class="headerlink" href="#comandos-basicos-en-docker" title="Permanent link">¶</a></h1>
-<h2 id="comandos"><strong>Comandos.</strong><a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
-<div class="admonition danger">
-<p class="admonition-title">Crear un contenedor</p>
-<p></p><center> 🔥 docker [ run | start | stop | restart ] [OPCIONES] [contenedor] 🔥 </center>
-</div>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Argumentos</th>
-<th style="text-align: left;"><center> Función </center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>run</code></td>
-<td style="text-align: left;">Crea y arranca un contenedor --&gt; Si lo ejecutas varias veces ejecutas varios contenedores.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>start | stop |restart</code></td>
-<td style="text-align: left;">Arranca/Detiene/Reinicia un contenedor ya existente.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-d</code></td>
-<td style="text-align: left;">Arranca en segundo plano.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-p</code></td>
-<td style="text-align: left;">Traducción de puertos entre el contenedor y la máquina anfitriona. Solo se puede hacer a la hora de crear la máquina.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>--name</code></td>
-<td style="text-align: left;">Nombre de la máquina.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>-it</code></td>
-<td style="text-align: left;">Redirige la salida al terminal del contenedor, es decir, accedes al terminal del contenedor.</td>
-</tr>
-</tbody>
-</table>
-<p>Si nos fijamos en la salida vemos que lo primero que hace es buscar la imagen “hello-world” en local, al no encontrarlo, lo descarga de un repositorio de docker y posteriormente lo ejecuta. 
-Si lo ejecutáis una segunda vez el código ya se ejecutará directamente en local (/var/lib/docker/).
-También podemos apreciar que la imagen que se carga es “hello-world:latest”, es decir, la última versión de la imagen del contenedor.</p>
+<div><h1 id="caracteristicas">Características.<a class="headerlink" href="#caracteristicas" title="Permanent link">¶</a></h1>
+<h2 id="regiones-y-zonas-de-disponibilidad">Regiones y Zonas de disponibilidad<a class="headerlink" href="#regiones-y-zonas-de-disponibilidad" title="Permanent link">¶</a></h2>
+<p>Las plataformas Cloud Computing (AWS, Azure, Google Cloud), suelen estar presentes en varias <mark class="critic">zonas y regiones</mark>, es decir, sus servidores se encuentran en diferentes paises y ciudades, incluso en varios CPD diferentes en la misma ciudad.</p>
+<p>Esto les permite:</p>
+<ul>
+<li>
+<p>Una <strong>alta disponibilidad y tolerancia a fallos</strong>, pues podemos tener nuestros servicios replicados en diferentes zonas dentro de una región en incluso en regiones diferentes.</p>
+</li>
+<li>
+<p>Desplegar tu aplicación/servicio en diferentes partes del mundo, mejorando la latencia para los usuarios de esa región.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Región y Zona</p>
+<p>💥 <strong>Una región se compone de varias zonas de disponibilidad donde podemos desplegar nuestros servicios.</strong></p>
+<p></p><center>
 <figure>
-  <img src="imagenes/docker/ejemplo_1.png" width="700">
+<img src="imagenes/nube/4.jpg" width="600">
+<figcaption>Regiones de AWS</figcaption>
 </figure>
+</center>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">CPD</p>
+<p><strong>Un <ins class="critic">Centro de Procesamiento de Datos (CPD)</ins> es una instalación física donde se alojan servidores, sistemas de almacenamiento, bases de datos, etc.</strong> </p>
+<p></p><center>
+<figure>
+<img src="imagenes/nube/1.jpeg" width="500">
+</figure>
+</center>
+</div>
+<h2 id="modelo-de-responsabilidad-compartida">Modelo de Responsabilidad Compartida.<a class="headerlink" href="#modelo-de-responsabilidad-compartida" title="Permanent link">¶</a></h2>
+<p>Ante un fallo en nuestro servidor, ya sea por un ataque cibernético o por un error en el hardware, existe un Modelo de Responsabilidad Compartida que indica quién era el responsable de que esa parte no fallara.</p>
+<p>Esta responsabilidad variará dependiendo del tipo de servicio que estemos contratando (IaaS, PaaS, SaaS).</p>
+<h3 id="responsabilidad-del-proovedor-aws-azure-google-cloud-huawei-cloud">Responsabilidad del proovedor (AWS, Azure, Google Cloud, Huawei Cloud, ...).<a class="headerlink" href="#responsabilidad-del-proovedor-aws-azure-google-cloud-huawei-cloud" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>Infraestructura física</strong>: Servidores, electricidad, seguridad física de los racks, cableado e interconexiones, equipos de red, ... </p>
+</li>
+<li>
+<p><strong>Software</strong>: En el caso del software que sea suministrado por ellos, deben comprobar que no tiene un software malicioso incorporado <strong>durante la instalación</strong>, que es compatible con nuestra máquina virtual por ejemplo.</p>
+</li>
+</ul>
+<h3 id="responsabilidades-del-cliente-nosotros">Responsabilidades del cliente (nosotros).<a class="headerlink" href="#responsabilidades-del-cliente-nosotros" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>El mantenimiento y gestión del sistema operativo, así como de cualquier <strong>software</strong> instalado por nosotros.</p>
+</li>
+<li>
+<p>El <strong>acceso a la plataforma</strong>, es decir, usuarios que tienen acceso a la gestión de nuestras máquinas en la plataforma (Ej: AWS).</p>
+</li>
+<li>
+<p>Configuración adecuada de los <strong>grupo de seguridad</strong>.</p>
+</li>
+<li>
+<p>Configuración lógica de la <strong>red</strong>.</p>
+</li>
+<li>
+<p>Correcto <strong>almacenamiento de los datos</strong> de nuestros clientes, por ejemplo si los queremos cifrados.</p>
+</li>
+</ul>
+<center>
+    <figure>
+    <img src="imagenes/nube/7.png" width="900">
+    <figcaption>Responsabilidad Compartida AWS.</figcaption>
+    </figure>
+</center>
 
-<div class="admonition info">
-<p class="admonition-title">Mostrar los contenedores del sistema, tanto parados como activos</p>
-<p></p><center> 🔥 docker ps [opciones] 🔥 </center>
-<p>✨ Con –a se muestran todos los contenedores, los activos y los detenidos.</p>
-<p>✨ Una vez sabemos su “nombre” o su “ID” podemos arrancarlo/pararlo/reiniciarlo.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Copiar o renombrar contenedores.</p>
-<p></p><center> 🔥 docker [ cp |rename ] [contenedor] 🔥 </center> 
-</div>
-<div class="admonition info">
-<p class="admonition-title">Ejecutar comandos dentro del contenedor</p>
-<p></p><center> 🔥 docker exec [OPCIONES] NombreContenedor Comando [ArgumentosComando] 🔥 </center>
-<p>✨ -d: Ejecuta en segundo plano.</p>
-<p>✨-it: Enlaza la entrada y salida a nuestro terminal. Es como entrar al terminal del contenedor.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Acceder a los logs de ejecución del contenedor.</p>
-<p></p><center> 🔥 docker logs [OPCIONES] NombreContenedor 🔥 </center>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Listar todos los contenedores.</p>
-<p></p><center> 🔥 docker container ls –a 🔥 </center>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Eliminar un contenedor</p>
-<p></p><center> 🔥 docker container rm NombreContenedor 🔥 </center>
-<p>✨ Elimina un contenedor.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Crear una imagen a partir de un contenedor</p>
-<p></p><center> 🔥 docker commit contenedor imagen 🔥 </center>
-<p>✨Crear una imagen de un contenedor es la forma más sencilla para subir nuestro contenedor a la nube o para hacer un backup local.</p>
-</div>
-<h2 id="ejemplos-basicos-en-docker"><strong>Ejemplos Básicos en Docker</strong><a class="headerlink" href="#ejemplos-basicos-en-docker" title="Permanent link">¶</a></h2>
-<div class="admonition danger">
-<p class="admonition-title">Aviso</p>
-<p>En los siguientes ejemplos el nombre del contenedor será Salva.</p>
-</div>
+<h2 id="costes-en-la-nube">Costes en la Nube.<a class="headerlink" href="#costes-en-la-nube" title="Permanent link">¶</a></h2>
+<p>Uno de los apartados más importantes como arquitectos/diseñadores de entornos en un sistema en la nube es el <mark class="critic"><strong>control/cálculo de costes</strong></mark>.</p>
+<p>Para ello debemos tener dos cosas en cuenta:</p>
+<p><strong>1.</strong> Cuánto nos vamos a ahorrar de no montar el sistema físicamente: servidores, cableado, electricidad, refrigeración, personal de mantenimiento, etc.</p>
+<center>
+    <figure>
+    <img src="imagenes/nube/5.png" width="800">
+    <figcaption>Costes de levantar servidores en local.</figcaption>
+    </figure>
+</center>
+
+<p><strong>2.</strong> Calcular aproximadamente cuánto va a costar mensualmente el tener funcionando el servicio en la plataforma Cloud que hayamos elegido.</p>
+<h3 id="calculadora-de-costes">Calculadora de costes.<a class="headerlink" href="#calculadora-de-costes" title="Permanent link">¶</a></h3>
+<p>La mayoría de plataformas de Cloud Computing nos permiten hacer uso de una <ins class="critic">Calculadora de Costes</ins> para ver en el tiempo cuanto nos costaría levantar los servicios que tenemos en mente.</p>
+<p>Habitualmente hay 4 aspectos que son los que generan el precio final de un servidor/servicio:</p>
 <ul>
-<li>Crear un contenedor nuevo con la última versión de Ubuntu.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>Salva<span class="w"> </span>ubuntu
-</code></pre></div>
-<ul>
-<li>Acceder al contenedor haciendo uso del intérprete /bin/bash.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>Salva<span class="w"> </span>bash
-</code></pre></div>
-<ul>
-<li>Actualiza los repositorios e instala dentro del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>update
-apt-get<span class="w"> </span>install<span class="w"> </span>nano<span class="w"> </span>iputils-ping<span class="w"> </span>net-tools<span class="w"> </span>iproute2
-</code></pre></div>
-<ul>
-<li>Detén el contenedor desde la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stop<span class="w"> </span>Salva
-</code></pre></div>
-<ul>
-<li>Arranca el contenedor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>start<span class="w"> </span>Salva
-</code></pre></div>
-<ul>
-<li>Descargar un fichero del contenedor a la máquina anfitriona.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>Salva:/home/prueba.txt<span class="w"> </span>.
-</code></pre></div>
-<ul>
-<li>Crear una imagen del contendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>commit<span class="w"> </span>Salva<span class="w"> </span>copiaContendor
-</code></pre></div>
-<ul>
-<li>Lista las imagenes que tienes en el sistema</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>images
-</code></pre></div>
-<ul>
-<li>Crea un .tar de la imagen copiaContendor.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>image<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>/home/usuario/backup.tar<span class="w"> </span>copiaContendor
-</code></pre></div>
-<ul>
-<li>Saca la imagen del .tar y vuélcala en un contenedor. Recuerda estar en el mismo directorio que el .tar.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>backup.tar
-docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>NuevoContenedor<span class="w"> </span>copiaContendor
-</code></pre></div>
-<h2 id="como-trabajar-en-clasecasa-usando-docker"><strong>¿Cómo trabajar en clase/casa usando docker?</strong><a class="headerlink" href="#como-trabajar-en-clasecasa-usando-docker" title="Permanent link">¶</a></h2>
-<p>Muchos de vosotros hacéis uso de Windows en casa, por lo que os puede entrar dudas de cómo podemos llevar nuestro trabajo a casa para seguir con él.</p>
-<p>Existen dos opciones explicadas en los siguientes vídeos:</p>
-<ol>
 <li>
-<p><a href="https://youtu.be/4Qg3lo-Dej0">Guardarnos las imágenes en un <strong>USB</strong>.</a></p>
+<p><strong>Procesamiento</strong>: Se refiere a la cantidad y calidad de las CPUs y Memoria RAM seleccionadas. Se suele cobrar únicamente cuando la máquina está encendida (se cobra por uso).</p>
 </li>
 <li>
-<p><a href="https://youtu.be/H67DulUqURg">Subir las imágenes a <strong>Docker HUB</strong>.</a>.</p>
+<p><strong>Almacenamiento</strong>: Dependiendo de la calidad y capacidad del almacenamiento seleccionado. Este cobro es constante pues aunque desconectemos la máquina el almacenamiento sigue siendo usado.</p>
 </li>
-</ol></div>
+<li>
+<p><strong>Red</strong>: Suele acarrear costes por el tráfico de salida que genere nuestro servicio. </p>
+</li>
+<li>
+<p><strong>Licencias</strong>: En caso de que estemos haciendo uso de algún software con licencias de pago.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Calculadoras</p>
+<p>🌩️ <a href="https://calculator.aws/#/"><strong>Calculadora AWS</strong></a></p>
+<p>🌩️ <a href="https://azure.microsoft.com/en-us/pricing/calculator/"><strong>Calculadora AZURE</strong></a></p>
+<p>🌩️ <a href="https://cloud.google.com/products/calculator?hl=es"><strong>Calculadora GOOGLE CLOUD</strong></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Escalar los Servicios</p>
+<p><strong>Nuestros <mark class="critic">requisitos</mark> como empresa pueden variar a lo largo de las semanas o incluso en el mismo día.</strong></p>
+<p><strong>Por ello se pueden <mark class="critic">automatizar procesos</mark> que nos permitan ampliar los recursos cuando la demanda sea mayor y reducirlos cuando sea menor, ahorrando así costes, al no pagar de más por un sistema sobredimensionado.</strong></p>
+</div></div>
 
 
 

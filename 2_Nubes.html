@@ -14,7 +14,7 @@
         <link rel="prev" href="0_MaquinasContenedores.html">
       
       
-        <link rel="next" href="1_ComandosDocker.html">
+        <link rel="next" href="3_Caracteristcas.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>La nube - Introducción a la Nube Pública.</title>
+        <title>Cloud Computing - Introducción a la Nube Pública.</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              La nube
+              Cloud Computing
             
           </span>
         </div>
@@ -244,6 +244,8 @@
       
         
       
+        
+      
     
     
     
@@ -319,7 +321,7 @@
   
   
   <span class="md-ellipsis">
-    La nube
+    Cloud Computing
     
   </span>
   
@@ -332,7 +334,7 @@
   
   
   <span class="md-ellipsis">
-    La nube
+    Cloud Computing
     
   </span>
   
@@ -381,19 +383,33 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#costes-en-la-nube" class="md-nav__link">
-    <span class="md-ellipsis">
-      Costes en la Nube.
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3_Caracteristcas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Características
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -523,19 +539,15 @@
 <img src="imagenes/nube/1.avif" width="100">
 <figcaption>Amazon AWS</figcaption>
 </figure>
-</center>
-<p></p><center>
-<figure>
+<p><figure>
 <img src="imagenes/nube/3.png" width="100">
 <figcaption>Microsoft Azure</figcaption>
-</figure>
-</center>
-<p></p><center>
-<figure>
+</figure></p>
+<p><figure>
 <img src="imagenes/nube/4.png" width="100">
 <figcaption>Google Cloud</figcaption>
 </figure>
-</center>
+</p></center>
 </div>
 <h3 id="nubes-privadas">Nubes Privadas.<a class="headerlink" href="#nubes-privadas" title="Permanent link">¶</a></h3>
 <ul>
@@ -577,45 +589,34 @@
 <p class="admonition-title">Desventajas</p>
 <p>💥 Necesitas gente con conocimientos de más de una nube pública, lo que hace que la gestión pueda ser más complicada.</p>
 </div>
-<h2 id="costes-en-la-nube">Costes en la Nube.<a class="headerlink" href="#costes-en-la-nube" title="Permanent link">¶</a></h2>
-<p>Uno de los apartados más importantes como arquitectos/diseñadores de entornos en un sistema en la nube es el <mark class="critic">control/cálculo de costes</mark>.</p>
-<p>Para ello debemos tener dos cosas en cuenta:</p>
-<p><strong>1.</strong> Cuánto nos vamos a ahorrar de no montar el sistema físicamente: servidores, cableado, electricidad, refrigeración, personal de mantenimiento, etc.</p>
-<center>
-    <figure>
-    <img src="imagenes/nube/5.png" width="800">
-    <figcaption>Costes de levantar servidores en local.</figcaption>
-    </figure>
-</center>
-
-<p><strong>2.</strong> Calcular aproximadamente cuánto va a costar mensualmente el tener funcionando el servicio en la plataforma Cloud que hayamos elegido.</p>
-<h3 id="calculadora-de-costes">Calculadora de costes.<a class="headerlink" href="#calculadora-de-costes" title="Permanent link">¶</a></h3>
-<p>La mayoría de plataformas de Cloud Computing nos permiten hacer uso de una <ins class="critic">Calculadora de Costes</ins> para ver en el tiempo cuanto nos costaría levantar los servicios que tenemos en mente.</p>
-<p>Habitualmente hay 4 aspectos que son los que generan el precio final de un servidor/servicio:</p>
+<p>Las plataformas Cloud Computing (AWS, Azure, Google Cloud), suelen estar presentes en varias <mark class="critic">zonas y regiones</mark>, es decir, sus servidores se encuentran en diferentes paises y ciudades, incluso en varios CPD diferentes en la misma ciudad.</p>
+<p>Esto les permite:</p>
 <ul>
 <li>
-<p><strong>Procesamiento</strong>: Se refiere a la cantidad y calidad de las CPUs y Memoria RAM seleccionadas. Se suele cobrar únicamente cuando la máquina está encendida (se cobra por uso).</p>
+<p>Una <strong>alta disponibilidad y tolerancia a fallos</strong>, pues podemos tener nuestros servicios replicados en diferentes zonas dentro de una región en incluso en regiones diferentes.</p>
 </li>
 <li>
-<p><strong>Almacenamiento</strong>: Dependiendo de la calidad y capacidad del almacenamiento seleccionado. Este cobro es constante pues aunque desconectemos la máquina el almacenamiento sigue siendo usado.</p>
-</li>
-<li>
-<p><strong>Red</strong>: Suele acarrear costes por el tráfico de salida que genere nuestro servicio. </p>
-</li>
-<li>
-<p><strong>Licencias</strong>: En caso de que estemos haciendo uso de algún software con licencias de pago.</p>
+<p>Desplegar tu aplicación/servicio en diferentes partes del mundo, mejorando la latencia para los usuarios de esa región.</p>
 </li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Calculadoras</p>
-<p>🌩️ <a href="https://calculator.aws/#/"><strong>Caluladora AWS</strong></a></p>
-<p>🌩️ <a href="https://azure.microsoft.com/en-us/pricing/calculator/"><strong>Caluladora AZURE</strong></a></p>
-<p>🌩️ <a href="https://cloud.google.com/products/calculator?hl=es"><strong>Caluladora GOOGLE CLOUD</strong></a></p>
+<p class="admonition-title">Región y Zona</p>
+<p>💥 <strong>Una región se compone de varias zonas de disponibilidad donde podemos desplegar nuestros servicios.</strong></p>
+<p></p><center>
+<figure>
+<img src="imagenes/nube/4.jpg" width="600">
+<figcaption>Regiones de AWS</figcaption>
+</figure>
+</center>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Escalar los Servicios</p>
-<p><strong>Nuestros <mark class="critic">requisitos</mark> como empresa pueden variar a lo largo de las semanas o incluso en el mismo día.</strong></p>
-<p><strong>Por ello se pueden <mark class="critic">automatizar procesos</mark> que nos permitan ampliar los recursos cuando la demanda sea mayor y reducirlos cuando sea menor, ahorrando así costes, al no pagar de más por un sistema sobredimensionado.</strong></p>
+<p class="admonition-title">CPD</p>
+<p><strong>Un <ins class="critic">Centro de Procesamiento de Datos (CPD)</ins> es una instalación física donde se alojan servidores, sistemas de almacenamiento, bases de datos, etc.</strong> </p>
+<p></p><center>
+<figure>
+<img src="imagenes/nube/1.jpeg" width="500">
+</figure>
+</center>
 </div></div>
 
 
