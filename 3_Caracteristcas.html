@@ -14,7 +14,7 @@
         <link rel="prev" href="2_Nubes.html">
       
       
-        <link rel="next" href="4_EC2.html">
+        <link rel="next" href="5_WP.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -443,8 +443,52 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    EC2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            EC2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="4_EC2.html" class="md-nav__link">
+      <a href="4_EC2.md"" class="md-nav__link">
         
   
   
@@ -455,6 +499,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5_WP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WordPress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -618,6 +693,23 @@
 <div class="admonition tip">
 <p class="admonition-title">Servicios Almacenamiento</p>
 <p><strong>En algunos servicios, especialmente los relacionados con almacenamiento el coste del GB es menor cuanta más capacidad contrates.</strong></p>
+</div>
+<h4 id="instancias-spot">Instancias Spot.<a class="headerlink" href="#instancias-spot" title="Permanent link">¶</a></h4>
+<p>Las instancias spot hacen referencia a aquellas instancias que se ejecutan con el <strong>exceso de capacidad de AWS</strong>, suelen tener un descuento muy grande pero <strong>no tenemos garantizado ningún recurso</strong>.</p>
+<p>El cliente selecciona unas necesidades para su instancia, unas horas de funcionamiento y si en esas horas hay un exceso de capacidad considerable por parte de amazon entonces levanta la instancia durante el tiempo indicado a un precio muy reducido.</p>
+<div class="admonition note">
+<p class="admonition-title">Ejemplo</p>
+<ul>
+<li>
+<p>Una empresa quiere analizar millones de datos de sus clientes y proveedores para entrenar una IA que le ayude en la toma de decisiones.</p>
+</li>
+<li>
+<p>Esta tarea es computacionalmente muy costosa y necesita mucho tiempo, no obstante se puede pausar e ir ejecutando paulatinamente.</p>
+</li>
+<li>
+<p>La empresa contrata una instancia spot, es decir, cuando haya un exceso de recursos en AWS (no tienen suficientes clientes y los servidores de AWS están parados y perdiendo dinero), se levanta automáticamente la instancia y comienza a ejecutar/entrenar a esa IA.</p>
+</li>
+</ul>
 </div>
 <h3 id="practica-calculadora-aws">Práctica Calculadora AWS.<a class="headerlink" href="#practica-calculadora-aws" title="Permanent link">¶</a></h3>
 <p><a download="CalculadoraAWS.docx" href="practicas/01_CalculadoraAWS.docx">CalculadoraAWS</a></p></div>
