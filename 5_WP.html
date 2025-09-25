@@ -492,9 +492,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo" class="md-nav__link">
+  <a href="#practica" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo.
+      Práctica.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobación.
     </span>
   </a>
   
@@ -541,19 +550,72 @@
 
 
 <div><h1 id="wordpress-ec2">WordPress EC2.<a class="headerlink" href="#wordpress-ec2" title="Permanent link">¶</a></h1>
-<h2 id="objetivo">Objetivo.<a class="headerlink" href="#objetivo" title="Permanent link">¶</a></h2>
-<p>Crear una máquina EC2 con un servicio WordPress que contenga:</p>
+<h2 id="practica">Práctica.<a class="headerlink" href="#practica" title="Permanent link">¶</a></h2>
+<p>Hay que crear una máquina EC2 con un servicio WordPress que contenga:</p>
 <ul>
 <li>
-<p>Una AMI del marketplace community de Bitnami.</p>
+<p>El wordpress a instalar debe ser la <strong>última versión</strong>: <a href="https://es.wordpress.org/category/actualizaciones/">Wordpress</a></p>
 </li>
 <li>
-<p>Una IP fija (Elastic IP). Es importante que no asigne una IP dinámica.</p>
+<p>Una <strong>AMI del marketplace community</strong> de Bitnami. </p>
 </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Usuario/Contraseña</p>
+<p></p><center>
+<strong>Recuerda visitar la página del proveedor para averiguar como acceder a la máquina (usuario/contraseña).</strong>
+</center>
+</div>
+<center>
+<figure>
+<img src="imagenes/ec2/19.png" width="1000">
+</figure>
+</center>
+
+<div class="admonition danger">
+<p class="admonition-title">Verified Provider</p>
+<p></p><center>
+<strong>Si elegimos un "Verified Provider" deberemos estar suscritos a este proveedor y no se puede hacer con la cuenta de estudiante que tenemos.</strong>
+</center>
+</div>
+<ul>
+<li>Una IP fija (<strong>Elastic IP</strong>). </li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">No IP Dinámica</p>
+<p><strong>Es importante que no asigne una IP dinámica durante la creación de la EC2.</strong></p>
+<p></p><center>
+<figure>
+<img src="imagenes/ec2/20.png" width="700">
+</figure>
+</center>
+</div>
+<ul>
 <li>
-<p>Política Seguridad que permita el acceso web tanto HTTP como HTTPS al servicio.</p>
+<p><strong>Política Seguridad</strong> que permita el acceso web:</p>
+<p>💥 Desde cualquier origen (0.0.0.0/0).</p>
+<p>💥 Con destino nuestro servidor web (EC2).</p>
+<p>💥 A través de los protocolos web  HTTP (80) y HTTPS (443).</p>
 </li>
-</ul></div>
+</ul>
+<h2 id="comprobacion">Comprobación.<a class="headerlink" href="#comprobacion" title="Permanent link">¶</a></h2>
+<ul>
+<li>Accede a la IP/DNS público desde tu navegador.</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/ec2/21.png" width="1000">
+</figure>
+</center>
+
+<ul>
+<li>Para acceder a la gestión de tu web deberás acceder a /wp-admin.</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/ec2/22.png" width="300">
+</figure>
+</center></div>
 
 
 
