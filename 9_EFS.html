@@ -629,6 +629,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Práctica.
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -742,7 +751,119 @@
 <p>EFS es una carpeta compartida mediante el protocolo NFS entre muchas EC2.</p>
 </li>
 </ul>
-</div></div>
+</div>
+<h2 id="practica">Práctica.<a class="headerlink" href="#practica" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">La práctica consistirá en crear un EFS que sea solo accesible desde una de nuestras máquinas EC2.</p>
+</div>
+<h3 id="recabar-la-informacion-de-nuestra-instancia">Recabar la información de nuestra instancia:<a class="headerlink" href="#recabar-la-informacion-de-nuestra-instancia" title="Permanent link">¶</a></h3>
+<p>Debemos buscar el <strong>grupo de seguridad y la zona de disponibilidad</strong> de nuestra máquina EC2.</p>
+<center>
+<figure>
+<img src="imagenes/s3/11.png" width="1000">
+</figure>
+</center>
+
+<h3 id="reglas-de-seguridad">Reglas de Seguridad.<a class="headerlink" href="#reglas-de-seguridad" title="Permanent link">¶</a></h3>
+<p>Vamos a crear una regla de entrada para el EFS que permita:</p>
+<ul>
+<li>
+<p>Tráfico NFS.</p>
+</li>
+<li>
+<p>Originado desde la máquina EC2 que indiquemos.</p>
+<p>💥 Para ello aplicamos como origen (source) el grupo de seguridad aplicado en la EC2 que queremos que pueda acceder.</p>
+</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/s3/10.png" width="1000">
+</figure>
+</center>
+
+<h3 id="crear-efs">Crear EFS.<a class="headerlink" href="#crear-efs" title="Permanent link">¶</a></h3>
+<p>Creamos el EFS y pinchamos en personalizar (Customize) para:</p>
+<ul>
+<li>
+<p>Deshabilitar Automatic Backups.</p>
+</li>
+<li>
+<p>Deshabilitar Transition into Infrequent Access (IA) del LifeCycle Management.</p>
+</li>
+<li>
+<p>En cuanto a las redes únicamente debemos dejar la <strong>zona de disponibilidad de nuestra instancia junto con su grupo de seguridad.</strong></p>
+</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/s3/12.png" width="1000">
+</figure>
+</center>
+
+<h3 id="montar-el-efs-en-nuestra-ec2">Montar el EFS en nuestra EC2.<a class="headerlink" href="#montar-el-efs-en-nuestra-ec2" title="Permanent link">¶</a></h3>
+<p>Dentro del menú EFS, seleccionamos el nuestro y vamos al apartado de "Attach/Asociar".</p>
+<center>
+<figure>
+<img src="imagenes/s3/13.png" width="1000">
+</figure>
+</center>
+
+<div class="admonition danger">
+<p class="admonition-title">El argumento final "efs" indica el directorio donde se montará el sistema de archivos.</p>
+</div>
+<center>
+<figure>
+<img src="imagenes/s3/14.png" width="1000">
+</figure>
+</center>
+
+<div class="admonition tip">
+<p class="admonition-title">Los siguientes comandos ya se ejecutan en la instancia EC2 donde queremos montar el EFS.</p>
+</div>
+<p>Para montar el EFS necesitaremos los paquetes necesarios para usar el protocolo <strong>NFS</strong>.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nfs-common
+</code></pre></div>
+<p>También vamos a instalar unos <strong>paquetes de Amazon para la gestión de EFS</strong> dentro de Ubuntu:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>binutils<span class="w"> </span>rustc<span class="w"> </span>cargo<span class="w"> </span>pkg-config<span class="w"> </span>libssl-dev<span class="w"> </span>gettext
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aws/efs-utils
+<span class="nb">cd</span><span class="w"> </span>efs-utils
+./build-deb.sh
+sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>./build/amazon-efs-utils*deb
+</code></pre></div>
+<p>Dentro de la carpeta que queremos que se enlace con el sistema EFS deberemos ejecutar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>nfs4<span class="w"> </span>-o<span class="w"> </span><span class="nv">nfsvers</span><span class="o">=</span><span class="m">4</span>.1,rsize<span class="o">=</span><span class="m">1048576</span>,wsize<span class="o">=</span><span class="m">1048576</span>,hard,timeo<span class="o">=</span><span class="m">600</span>,retrans<span class="o">=</span><span class="m">2</span>,noresvport<span class="w"> </span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:/<span class="w"> </span>.
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">IMPORTANTE</p>
+<p></p><center>
+<strong>Sustituye las XXXXXXXXXXXXXXX por el DNS de tu EFS.</strong>
+</center>
+</div>
+<p>Podemos comprobar que está todo montado con "df -h"</p>
+<center>
+<figure>
+<img src="imagenes/s3/15.png" width="1000">
+</figure>
+</center>
+
+<h3 id="automatizar-el-montaje-en-el-arranque">Automatizar el montaje en el arranque.<a class="headerlink" href="#automatizar-el-montaje-en-el-arranque" title="Permanent link">¶</a></h3>
+<p>Al iniciar la máquina el sistema de archivos EFS no está montado.</p>
+<p>Para que podamos montarlo de forma automática deberemos editar el fichero /etc/fstab y añadir:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>fs-XXXXXXXX<span class="o">]</span>.efs.<span class="o">[</span>REGION<span class="o">]</span>.amazonaws.com:/<span class="w"> </span>/path/to/mount/dir<span class="w"> </span>nfs4<span class="w"> </span>defaults,_netdev<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</code></pre></div>
+<h3 id="comprobar-el-rendimiento">Comprobar el Rendimiento.<a class="headerlink" href="#comprobar-el-rendimiento" title="Permanent link">¶</a></h3>
+<p>Para comprobar el rendimiento usaremos la herramienta <strong>fio</strong>.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fio
+sudo<span class="w"> </span>fio<span class="w"> </span>--name<span class="o">=</span>fio-efs<span class="w"> </span>--filesize<span class="o">=</span>10G<span class="w"> </span>--filename<span class="o">=</span>test.img<span class="w"> </span>--bs<span class="o">=</span>1M<span class="w"> </span>--nrfiles<span class="o">=</span><span class="m">1</span><span class="w"> </span>--direct<span class="o">=</span><span class="m">1</span><span class="w"> </span>--sync<span class="o">=</span><span class="m">0</span><span class="w"> </span>--rw<span class="o">=</span>write<span class="w"> </span>--iodepth<span class="o">=</span><span class="m">200</span><span class="w"> </span>--ioengine<span class="o">=</span>libaio
+</code></pre></div>
+<p>Tras estos comandos se habrá creado un fichero de 10G en el EFS.</p>
+<p>Si vais al menú de EFS podréis comprobar que tenéis los 10G creados.</p>
+<center>
+<figure>
+<img src="imagenes/s3/16.png" width="700">
+</figure>
+</center></div>
 
 
 
