@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#almacenamiento-en-ebs" class="md-skip">
+        <a href="#amazon-simple-storage-service-s3-o-buckets" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -642,18 +642,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#almacenamiento-en-la-nube-vs-almacenamiento-tradicional" class="md-nav__link">
+  <a href="#caracteristicas" class="md-nav__link">
     <span class="md-ellipsis">
-      Almacenamiento en la nube vs Almacenamiento Tradicional.
+      Características.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#almacenamiento-por-bloque-vs-almacenamiento-por-objeto" class="md-nav__link">
+  <a href="#tipos-de-s3" class="md-nav__link">
     <span class="md-ellipsis">
-      Almacenamiento por bloque vs Almacenamiento por objeto.
+      Tipos de S3:
     </span>
   </a>
   
@@ -699,41 +699,71 @@
 
 
 
-<div><h1 id="almacenamiento-en-ebs">Almacenamiento en EBS.<a class="headerlink" href="#almacenamiento-en-ebs" title="Permanent link">¶</a></h1>
-<h2 id="almacenamiento-en-la-nube-vs-almacenamiento-tradicional">Almacenamiento en la nube vs Almacenamiento Tradicional.<a class="headerlink" href="#almacenamiento-en-la-nube-vs-almacenamiento-tradicional" title="Permanent link">¶</a></h2>
-<ul>
-<li>Confiable al tener todos los sistemas redundados y al ser muy sencillo hacer copias en diferentes lugares.</li>
-<li>Escalable al poder aumentar la capacidad con un par de clicks, sin necesidad de ir añadiendo discos.</li>
-</ul>
-<details class="question">
-<summary>¿Qué proceso deberíamos seguir si en nuestra empresa querríamos incrementar nuestra capacidad de disco duro?</summary>
-<ul>
-<li>Añadir en el servidor nuevos discos duros.</li>
-<li>Configurarlos dentro del RAID. </li>
-<li>Problemas ➡️ No detectar el disco, el problema de insertar un disco en caliente o que no tengamos más conexiones libres para añadir nuevos discos, etc.</li>
-</ul>
+<div><h1 id="amazon-simple-storage-service-s3-o-buckets">Amazon Simple Storage Service (S3) o Buckets.<a class="headerlink" href="#amazon-simple-storage-service-s3-o-buckets" title="Permanent link">¶</a></h1>
+<p>Servico de almacenamiento de objetos que pueden ser accedidos a través de una URL.</p>
+<div class="admonition tip">
+<p class="admonition-title">EFS vs S3</p>
 <p></p><center>
+<strong>A diferencia de EFS un almacenamiento de S3 puede ser accedido desde cualquier parte, mientras que los EFS solo pueden ser accedidos por ECS de la misma región.</strong>
+</center>
+</div>
+<center>
 <figure>
-<img src="imagenes/s3/1.jpg" width="400">
+<img src="imagenes/s3/18.png" width="800">
 </figure>
 </center>
-</details>
-<h2 id="almacenamiento-por-bloque-vs-almacenamiento-por-objeto">Almacenamiento por bloque vs Almacenamiento por objeto.<a class="headerlink" href="#almacenamiento-por-bloque-vs-almacenamiento-por-objeto" title="Permanent link">¶</a></h2>
-<h3 id="almacenamiento-por-bloque">Almacenamiento por bloque.<a class="headerlink" href="#almacenamiento-por-bloque" title="Permanent link">¶</a></h3>
+
+<div class="admonition note">
+<p class="admonition-title">Programación</p>
+<p></p><center>
+<strong>Al ser accesibles desde una URL también pueden ser accedidos desde el código de nuestros programas.</strong>
+</center>
+</div>
+<h2 id="caracteristicas">Características.<a class="headerlink" href="#caracteristicas" title="Permanent link">¶</a></h2>
 <ul>
-<li>Los datos se almacenan por bloques, habitualmente de 4096 bytes. </li>
-<li>Si se ha de modificar una parte de los datos solo se cambian los bloques donde se encuentran dichos datos. No es necesario reescribir el resto de bloques.</li>
-<li>Es el tipo de almacenamiento usado en discos SSD y HDD.</li>
+<li>El <strong>nombre debe ser único en todo AWS</strong>.</li>
+<li>Puede almacenar cantidades de <strong>datos ilimitadas</strong>.</li>
+<li>Un mismo objeto no puede pesar más de 5TB.</li>
+<li>
+<p>Todos los objetos guardados cuentan con <mark class="critic"><strong>una clave, un ID de versión, un valor</strong></mark>, metadatos y subrecursos.</p>
+<p>💥 La <strong>clave</strong> es el nombre con el cual puedes descargar el fichero o con el que lo guardas en el bucket.</p>
+<p>💥 El <strong>ID de versión</strong> se usa porque podemos almacenar diferentes versiones, por ejemplo de un documento.</p>
+<p>💥 El <strong>valor</strong> es el contenido.</p>
+<p>💥 Los <strong>metadatos</strong> pueden ser creados por los usuarios o por el propio sistema de AWS para la gestión del objeto.</p>
+</li>
+<li>
+<p>Por defecto los S3 se <strong>replican automáticamente</strong> en diferentes zonas de la misma región.</p>
+</li>
 </ul>
-<h3 id="almacenamiento-por-objeto">Almacenamiento por objeto.<a class="headerlink" href="#almacenamiento-por-objeto" title="Permanent link">¶</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Modificación de objetos</p>
+<p></p><center>
+<ins class="critic"><strong>Un objeto no puede ser modificado desde el propio S3</strong></ins>. Si quiero modificar un documento debo descargarlo, modificarlo y volver a subirlo a S3.
+</center>
+</div>
+<h2 id="tipos-de-s3">Tipos de S3:<a class="headerlink" href="#tipos-de-s3" title="Permanent link">¶</a></h2>
 <ul>
-<li>Es un almacenamiento secuencial, aunque se modifique una pequeña parte del objeto éste se reescribe por completo.</li>
+<li>
+<p><strong>S3 Estándar</strong>: Ofrece mayor rendimiento, se usa para acceso habitual de datos. Usado por aplicaciones web, servicios de contenido (vídeos), videojuegos, etc.</p>
+</li>
+<li>
+<p><strong>S3 Estándar - Acceso poco frecuente</strong>: Sigue siendo un acceso rápido, pero a los que se accede con menos frecuencia, pero que requieren acceso rápido cuando es necesario, por ejemplo una copia de seguridad reciente.</p>
+</li>
+<li>
+<p><strong>S3 One Zone – Acceso poco frecuente</strong>: Acceso también de alto rendimiento pero sin réplicas, usado en copias de seguridad secundarias.</p>
+</li>
+<li>
+<p><strong>S3 Intelligent-Tiering</strong>: Automáticamente mueve los objetos a diferentes tipos de Buckets (S3) dependiendo de los accesos o necesidades. Por ejemplo si un archivo no se accede en 30 días se pasa a un S3 de Acceso poco frecuente y viceversa si comienza a usarse de forma habitual. </p>
+</li>
+<li>
+<p><strong>S3 Glacier</strong>: Es un almacenamiento lento de bajo coste. Se usa para los datos que es más raros acceder. </p>
+</li>
 </ul>
-<details class="question">
-<summary>¿Cuáles dirías que son las ventajas de cada tipo de almacenamiento?</summary>
-<p>Almacenamiento por bloque: Es más rápido.</p>
-<p>Almacenamiento por objetos: Es más sencillo de implementar y más barato.</p>
-</details></div>
+<center>
+<figure>
+<img src="imagenes/s3/17.png" width="800">
+</figure>
+</center></div>
 
 
 
