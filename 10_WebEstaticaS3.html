@@ -703,6 +703,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#activar-las-versiones-en-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activar las versiones en S3.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicas-entre-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réplicas entre Buckets.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#video-de-ejemplo" class="md-nav__link">
     <span class="md-ellipsis">
       Vídeo de Ejemplo.
@@ -861,6 +879,84 @@
 <div class="admonition danger">
 <p class="admonition-title">Recuerda guardar los cambios para que se apliquen.</p>
 </div>
+<h2 id="activar-las-versiones-en-s3">Activar las versiones en S3.<a class="headerlink" href="#activar-las-versiones-en-s3" title="Permanent link">¶</a></h2>
+<ul>
+<li>Al activar las versiones se crearán diferentes objetos de otro al ser modificados. Esto nos permitirá volver a restaurar una versión anterior de un archivo.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Coste del Versionado.</p>
+<p></p><center>
+<strong>Activar el versionado es gratis, pero cada versión es un nuevo objeto que se crea dentro del S3 y por tanto el almacenamiento crece y con ello su coste.</strong>
+</center>
+</div>
+<h3 id="restauracion-automatica">Restauración Automática.<a class="headerlink" href="#restauracion-automatica" title="Permanent link">¶</a></h3>
+<h4 id="vamos-a-crear-una-version-de-un-fichero-y-luego-borrar-el-ultimo-y-ver-como-automaticamente-la-version-que-le-precede-toma-su-lugar">Vamos a crear una versión de un fichero y luego borrar el último y ver como automáticamente la versión que le precede toma su lugar.<a class="headerlink" href="#vamos-a-crear-una-version-de-un-fichero-y-luego-borrar-el-ultimo-y-ver-como-automaticamente-la-version-que-le-precede-toma-su-lugar" title="Permanent link">¶</a></h4>
+<p>1️⃣ Edita el fichero index.html con un bloc de notas. Por ejemplo Cambia el nombre de Javier.</p>
+<p>2️⃣ Sube el fichero al bucket, sobrescribiendo el que había subido. Comprueba en la web que el cambio se ha realizado con éxito.</p>
+<p>3️⃣ Comprueba dentro de aws, es decir haciendo click sobre el propio index.html que efectivamente tenemos dos objetos. </p>
+<center>
+<figure>
+<img src="imagenes/s3/26.png" width="700">
+</figure>
+</center>
+
+<p>4️⃣ Elimina la última <strong>versión</strong> del index.html subido. Comprueba en la web que el cambio se ha revertido automáticamente.</p>
+<h3 id="gestion-de-versiones">Gestión de Versiones.<a class="headerlink" href="#gestion-de-versiones" title="Permanent link">¶</a></h3>
+<p>En los siguientes apartados vamos a crear ciclos de vida para las versiones.</p>
+<center>
+<figure>
+<img src="imagenes/s3/27.png" width="1000">
+</figure>
+</center>
+
+<h4 id="1-crea-una-politica-para-transferir-las-versiones-mas-antiguas-30-dias-a-tipos-de-s3-mas-economicos">1. Crea una política para transferir las versiones más antiguas (30 días) a tipos de S3 más económicos.<a class="headerlink" href="#1-crea-una-politica-para-transferir-las-versiones-mas-antiguas-30-dias-a-tipos-de-s3-mas-economicos" title="Permanent link">¶</a></h4>
+<ul>
+<li>Debe aplicarse a todos los elementos del S3.</li>
+<li>Debe transferir las versiones desactualizadas, no a la que está en producción.</li>
+<li>Pasados 30 días deben transferirse a un S3 Estándar de acceso poco frecuente (IA).</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Si dejamos las versiones vacías afectará a todas las versiones del bucket.</p>
+</div>
+<h4 id="2-crea-una-politica-para-eliminar-las-versiones-pasadas-200-dias-excepto-la-ultima-version">2. Crea una política para eliminar las versiones pasadas 200 días, excepto la última versión.<a class="headerlink" href="#2-crea-una-politica-para-eliminar-las-versiones-pasadas-200-dias-excepto-la-ultima-version" title="Permanent link">¶</a></h4>
+<ul>
+<li>Debe aplicarse a todos los elementos del S3.</li>
+<li>Deben eliminarse pasados 200 días, a excepción de la versión más reciente que debe mantenerse.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Si en el apartado de versiones ponemos un 1, quiere decir que esta regla no afectará a la última versión creada (la más reciente).</p>
+</div>
+<h2 id="replicas-entre-buckets">Réplicas entre Buckets.<a class="headerlink" href="#replicas-entre-buckets" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Creación de Bucket de Backup.</p>
+<p>Para este apartado tendréis que volver a crear otro bucket auxiliar que debe cumplir lo siguiente:</p>
+<ul>
+<li>Debe encontrarse en la región de <strong>Oregón - us-west-2.</strong></li>
+<li>Debe tener las <strong>versiones habilitadas</strong>.</li>
+<li>Debe poder accederse de forma <strong>pública</strong>.</li>
+</ul>
+</div>
+<ul>
+<li>Vamos a crear una réplica automática en otro S3 de otra región de AWS.</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/s3/28.png" width="1000">
+</figure>
+</center>
+
+<ul>
+<li>Debe afectar a todos los objetos del bucket.</li>
+<li>Se debe seleccionar un bucket auxiliar creado previamente.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Al finalizar indicarle que NO replique los ficheros existentes.</p>
+</div>
+<h3 id="comprobacion-del-funcionamiento">Comprobación del funcionamiento.<a class="headerlink" href="#comprobacion-del-funcionamiento" title="Permanent link">¶</a></h3>
+<ul>
+<li>Vuelve a modificar el fichero index.html y subirlo al bucket oficial.</li>
+<li>Pasado unos minutos en el apartado de objetos del bucket auxiliar debería aparecer dicho fichero replicado.</li>
+</ul>
 <h2 id="video-de-ejemplo">Vídeo de Ejemplo.<a class="headerlink" href="#video-de-ejemplo" title="Permanent link">¶</a></h2>
 <center>
 

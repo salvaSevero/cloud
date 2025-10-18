@@ -655,6 +655,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos de uso.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tipos-de-s3" class="md-nav__link">
     <span class="md-ellipsis">
       Tipos de S3:
@@ -771,7 +780,11 @@
 <p>Por defecto los S3 se <strong>replican automáticamente</strong> en diferentes zonas de la misma región.</p>
 </li>
 <li>
-<p>Se cobra por el tráfico de descarga desde el cubo y por el almacenamiento en si.</p>
+<p>Se cobra por el <strong>tráfico de descarga</strong> desde el cubo y por el <strong>almacenamiento</strong> en si.</p>
+<p>💥<a href="https://aws.amazon.com/es/s3/pricing/">Precios S3 en España.</a></p>
+</li>
+<li>
+<p>Son más lentos que el almacenamiento en un EBS.</p>
 </li>
 </ul>
 <div class="admonition danger">
@@ -780,6 +793,18 @@
 <ins class="critic"><strong>Un objeto no puede ser modificado desde el propio S3</strong></ins>. Si quiero modificar un documento debo descargarlo, modificarlo y volver a subirlo a S3.
 </center>
 </div>
+<h2 id="casos-de-uso">Casos de uso.<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><strong>Aplicaciones</strong>: Para el almacenamiento de ciertos recursos de aplicaciones como: archivos multimedia de los usuarios o registros del servicio. </p>
+</li>
+<li>
+<p><strong>Webs Estáticas</strong>: Pueden alojar webs estáticas.</p>
+</li>
+<li>
+<p><strong>Copias de seguridad</strong>: Permite un almacenaje barato y accesible para almacenar y restaurar copias de seguridad.</p>
+</li>
+</ul>
 <h2 id="tipos-de-s3">Tipos de S3:<a class="headerlink" href="#tipos-de-s3" title="Permanent link">¶</a></h2>
 <ul>
 <li>
