@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/cloud/6_S3.html">
+        <link rel="canonical" href="https://salvasevero.github.io/cloud/11_aws_cli.html">
       
       
-        <link rel="prev" href="9_EFS.html">
+        <link rel="prev" href="10_WebEstaticaS3.html">
       
-      
-        <link rel="next" href="10_WebEstaticaS3.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>S3 - Introducción a la Nube Pública.</title>
+        <title>Configuración - Introducción a la Nube Pública.</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#amazon-simple-storage-service-s3-o-buckets" class="md-skip">
+        <a href="#aws-cli" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              S3
+              Configuración
             
           </span>
         </div>
@@ -474,10 +472,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -495,11 +491,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -515,7 +511,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Almacenamiento
@@ -595,32 +591,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    S3
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="6_S3.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="6_S3.html" class="md-nav__link">
         
   
   
@@ -631,62 +605,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#caracteristicas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Características.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#casos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Casos de uso.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tipos-de-s3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tipos de S3:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#politica-de-ciclo-de-vida" class="md-nav__link">
-    <span class="md-ellipsis">
-      Política de Ciclo de Vida.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -727,8 +645,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -738,11 +658,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -758,7 +678,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             AWS CLI
@@ -769,10 +689,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="11_aws_cli.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Configuración
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="11_aws_cli.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -783,6 +725,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ques-es-aws-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qués es AWS CLI?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-ec2-con-aws-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una EC2 con AWS CLI.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-regla-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una regla de seguridad.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -819,98 +826,166 @@
 
 
 
-<div><h1 id="amazon-simple-storage-service-s3-o-buckets">Amazon Simple Storage Service (S3) o Buckets.<a class="headerlink" href="#amazon-simple-storage-service-s3-o-buckets" title="Permanent link">¶</a></h1>
-<p>Servico de almacenamiento de objetos que pueden ser accedidos a través de una URL.</p>
+<div><h1 id="aws-cli">AWS CLI.<a class="headerlink" href="#aws-cli" title="Permanent link">¶</a></h1>
+<h2 id="ques-es-aws-cli">¿Qués es AWS CLI?<a class="headerlink" href="#ques-es-aws-cli" title="Permanent link">¶</a></h2>
+<p>AWS CLI (Command Line Interface) es una herramienta que se ejecuta desde la línea de comandos que permite gestionar todos los servicios de Amazon Web Services, es decir, <mark class="critic"><strong>crear y gestionar EC2, S3, EFS, EBS, a través de comandos</strong></mark>.</p>
+<h2 id="instalacion">Instalación.<a class="headerlink" href="#instalacion" title="Permanent link">¶</a></h2>
+<p><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">Descarga AWS CLI</a></p>
+<h2 id="configuracion">Configuración.<a class="headerlink" href="#configuracion" title="Permanent link">¶</a></h2>
+<ul>
+<li>Abrimos un terminal y ejecutamos <ins class="critic"><strong>aws configure</strong></ins></li>
+</ul>
 <div class="admonition tip">
-<p class="admonition-title">EFS vs S3</p>
-<p></p><center>
-<strong>A diferencia de EFS un almacenamiento de S3 puede ser accedido desde cualquier parte, mientras que los EFS solo pueden ser accedidos por ECS de la misma región.</strong>
-</center>
+<p class="admonition-title">El comando nos preguntará por información, la cual podemos dejar en blanco para el caso de AWS Academy.</p>
 </div>
-<center>
-<figure>
-<img src="imagenes/s3/18.png" width="800">
-</figure>
-</center>
-
+<div class="highlight"><pre><span></span><code>AWS<span class="w"> </span>Access<span class="w"> </span>Key<span class="w"> </span>ID<span class="w"> </span><span class="o">[</span>None<span class="o">]</span>:<span class="w"> </span>
+AWS<span class="w"> </span>Secret<span class="w"> </span>Access<span class="w"> </span>Key<span class="w"> </span><span class="o">[</span>None<span class="o">]</span>:<span class="w"> </span>
+Default<span class="w"> </span>region<span class="w"> </span>name<span class="w"> </span><span class="o">[</span>None<span class="o">]</span>:<span class="w"> </span>
+Default<span class="w"> </span>output<span class="w"> </span>format<span class="w"> </span><span class="o">[</span>None<span class="o">]</span>:<span class="w"> </span>
+</code></pre></div>
+<ul>
+<li>Esto crea el fichero <ins class="critic"><strong>.aws/credentials</strong></ins>, que editaremos. </li>
+</ul>
 <div class="admonition note">
-<p class="admonition-title">Programación</p>
-<p></p><center>
-<strong>Al ser accesibles desde una URL también pueden ser accedidos desde el código de nuestros programas.</strong>
-</center>
-</div>
-<h2 id="caracteristicas">Características.<a class="headerlink" href="#caracteristicas" title="Permanent link">¶</a></h2>
+<p class="admonition-title">Credentials</p>
 <ul>
-<li>El <strong>nombre debe ser único en todo AWS</strong>.</li>
-<li>Puede almacenar cantidades de <strong>datos ilimitadas</strong>.</li>
-<li>Un mismo objeto no puede pesar más de 5TB.</li>
-<li>
-<p>Todos los objetos guardados cuentan con <mark class="critic"><strong>una clave, un ID de versión, un valor</strong></mark>, metadatos y subrecursos.</p>
-<p>💥 La <strong>clave</strong> es el nombre con el cual puedes descargar el fichero o con el que lo guardas en el bucket.</p>
-<p>💥 El <strong>ID de versión</strong> se usa porque podemos almacenar diferentes versiones, por ejemplo de un documento.</p>
-<p>💥 El <strong>valor</strong> es el contenido.</p>
-<p>💥 Los <strong>metadatos</strong> pueden ser creados por los usuarios o por el propio sistema de AWS para la gestión del objeto.</p>
-</li>
-<li>
-<p>Por defecto los S3 se <strong>replican automáticamente</strong> en diferentes zonas de la misma región.</p>
-</li>
-<li>
-<p>Se cobra por el <strong>tráfico de descarga</strong> desde el cubo y por el <strong>almacenamiento</strong> en si.</p>
-<p>💥<a href="https://aws.amazon.com/es/s3/pricing/">Precios S3 en España.</a></p>
-</li>
-<li>
-<p>Son más lentos que el almacenamiento en un EBS.</p>
-</li>
+<li>En Linux/macOs el archivo estará en la ruta: ~/.aws/credentials.</li>
+<li>En Windows estará en la ruta: C:\Users\usuario\.aws\credentials.</li>
 </ul>
-<div class="admonition danger">
-<p class="admonition-title">Almacenamiento por objetos.</p>
-<p></p><center>
-<ins class="critic"><strong>Un objeto no puede ser modificado desde el propio S3</strong></ins>. Si quiero modificar un documento debo descargarlo, modificarlo y volver a subirlo a S3.
-</center>
 </div>
-<h2 id="casos-de-uso">Casos de uso.<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <ul>
-<li>
-<p><strong>Aplicaciones</strong>: Para el almacenamiento de ciertos recursos de aplicaciones como: archivos multimedia de los usuarios o registros del servicio. </p>
-</li>
-<li>
-<p><strong>Webs Estáticas</strong>: Pueden alojar webs estáticas.</p>
-</li>
-<li>
-<p><strong>Copias de seguridad</strong>: Permite un almacenaje barato y accesible para almacenar y restaurar copias de seguridad.</p>
-</li>
-</ul>
-<h2 id="tipos-de-s3">Tipos de S3:<a class="headerlink" href="#tipos-de-s3" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><strong>S3 Estándar</strong>: Ofrece mayor rendimiento, se usa para acceso habitual de datos. Usado por aplicaciones web, servicios de contenido (vídeos), videojuegos, etc.</p>
-</li>
-<li>
-<p><strong>S3 Estándar - Acceso poco frecuente</strong>: Sigue siendo un acceso rápido, pero a los que se accede con menos frecuencia, pero que requieren acceso rápido cuando es necesario, por ejemplo una copia de seguridad reciente.</p>
-</li>
-<li>
-<p><strong>S3 One Zone – Acceso poco frecuente</strong>: Acceso también de alto rendimiento pero sin réplicas, usado en copias de seguridad secundarias.</p>
-</li>
-<li>
-<p><strong>S3 Intelligent-Tiering</strong>: Automáticamente mueve los objetos a diferentes tipos de Buckets (S3) dependiendo de los accesos o necesidades. Por ejemplo si un archivo no se accede en 30 días se pasa a un S3 de Acceso poco frecuente y viceversa si comienza a usarse de forma habitual. </p>
-</li>
-<li>
-<p><strong>S3 Glacier</strong>: Es un almacenamiento lento de bajo coste. Se usa para los datos que es más raros acceder. </p>
-</li>
+<li>Dentro de ➡️ AWS Details ➡️ Cloud Access ➡️ AWS CLI podemos recabar la información necesaria:</li>
 </ul>
 <center>
 <figure>
-<img src="imagenes/s3/17.png" width="800">
+<img src="imagenes/cli/1.png" width="1200">
 </figure>
 </center>
 
-<h2 id="politica-de-ciclo-de-vida">Política de Ciclo de Vida.<a class="headerlink" href="#politica-de-ciclo-de-vida" title="Permanent link">¶</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Solo es necesario copiar y pegar todo el texto en el fichero credentials.</p>
+</div>
 <ul>
-<li>Dicta la vida útil de un archivo dependiendo del uso que se haga de él, por ejemplo pasando a uso poco frecuente y seguidamente a Glacier y finalmente para su eliminación,  reduciendo costes de forma automática.</li>
+<li>
+<p>Una vez editado el fichero con la nueva información ejecutamos de nuevo <mark class="critic"><strong>aws configure</strong></mark></p>
+<p>💥 Región: us-east-1</p>
+<p>💥 Formato: json</p>
+</li>
 </ul>
 <center>
 <figure>
-<img src="imagenes/s3/20.png" width="800">
+<img src="imagenes/cli/2.png" width="500">
+</figure>
+</center>
+
+<h2 id="crear-una-ec2-con-aws-cli">Crear una EC2 con AWS CLI.<a class="headerlink" href="#crear-una-ec2-con-aws-cli" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>aws ec2 run-instances \
+    --image-id ami-0360c520857e3138f \
+    --count 1 \
+    --instance-type t2.micro \
+    --key-name vockey \
+    --security-groups PermiteSSH \
+    --user-data "sudo apt update &amp;&amp; sudo apt install -y nginx" \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=mi-servidor-web}]'
+</code></pre></div>
+<ul>
+<li><strong>image-id</strong>: El ID de la imagen AMI.</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/cli/3.png" width="700">
+</figure>
+</center>
+
+<ul>
+<li>
+<p><strong>count</strong>: Número de instancias a crear.</p>
+</li>
+<li>
+<p><strong>instance-type</strong>: Tipo de máquina (CPU / RAM)</p>
+</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/cli/4.png" width="700">
+</figure>
+</center>
+
+<ul>
+<li><strong>key-name</strong>: Claves de acceso ssh (vockey).</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/cli/5.png" width="700">
+</figure>
+</center>
+
+<ul>
+<li><strong>security-groups</strong>: Filtros de seguridad que aplicas.</li>
+</ul>
+<center>
+<figure>
+<img src="imagenes/cli/6.png" width="700">
+</figure>
+</center>
+
+<ul>
+<li>
+<p><strong>user-data</strong>: Comandos a ejecutar al crear la máquina.</p>
+</li>
+<li>
+<p><strong>tag-specifications</strong>: Se usa para información de etiquetas como el nombre de la EC2 (mi-servidor-web).</p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">AYUDA.</p>
+<p>aws ec2 run-instances help</p>
+</div>
+<h2 id="crear-una-regla-de-seguridad">Crear una regla de seguridad.<a class="headerlink" href="#crear-una-regla-de-seguridad" title="Permanent link">¶</a></h2>
+<p>Vamos a crear una regla que permita el tráfico de entrada para SSH(22), HTTP(80), HTTPS(443).</p>
+<h4 id="primero-creamos-el-grupo-de-seguridad-que-incluira-todas-las-reglas">Primero creamos el grupo de seguridad que incluirá todas las reglas.<a class="headerlink" href="#primero-creamos-el-grupo-de-seguridad-que-incluira-todas-las-reglas" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code>aws ec2 create-security-group \
+    --group-name permite-web \
+    --description "Permite acceso ssh y web"
+</code></pre></div>
+<h4 id="anadimos-regla-de-entrada-que-permita-el-ssh">Añadimos regla de entrada  que permita el SSH.<a class="headerlink" href="#anadimos-regla-de-entrada-que-permita-el-ssh" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code>aws ec2 authorize-security-group-ingress \
+    --group-name permite-web \
+    --protocol tcp \
+    --port 22 \
+    --cidr 0.0.0.0/0
+</code></pre></div>
+<h4 id="anadimos-regla-de-entrada-que-permita-el-http">Añadimos regla de entrada que permita el HTTP.<a class="headerlink" href="#anadimos-regla-de-entrada-que-permita-el-http" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code>aws ec2 authorize-security-group-ingress \
+    --group-name permite-web \
+    --protocol tcp \
+    --port 80 \
+    --cidr 0.0.0.0/0
+</code></pre></div>
+<h4 id="anadimos-regla-de-entrada-que-permita-el-https">Añadimos regla de entrada  que permita el HTTPS.<a class="headerlink" href="#anadimos-regla-de-entrada-que-permita-el-https" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code>aws ec2 authorize-security-group-ingress \
+    --group-name permite-web \
+    --protocol tcp \
+    --port 443 \
+    --cidr 0.0.0.0/0
+</code></pre></div>
+<ul>
+<li>
+<p><strong>aws ec2 authorize-security-group-ingress</strong>: Crea una regla de seguridad de entrada  sobre el tráfico entrante (ingress) a tu máquina.</p>
+</li>
+<li>
+<p><strong>group-name</strong>: Nombre del grupo de seguridad al que se le añade la regla.</p>
+</li>
+<li>
+<p><strong>cidr</strong>: Direcciones IP o Red a la que afecta la regla.</p>
+</li>
+</ul>
+<div class="admonition tipo">
+<p class="admonition-title">El CIDR 0.0.0.0/0 indica cualquier dirección IP.</p>
+</div>
+<center>
+<figure>
+<img src="imagenes/cli/7.png" width="1200">
 </figure>
 </center></div>
 
