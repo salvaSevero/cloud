@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/cloud/6_S3.html">
+        <link rel="canonical" href="https://salvasevero.github.io/cloud/12_Policies.html">
       
       
-        <link rel="prev" href="9_EFS.html">
+        <link rel="prev" href="10_WebEstaticaS3.html">
       
       
-        <link rel="next" href="10_WebEstaticaS3.html">
+        <link rel="next" href="11_aws_cli.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>S3 - Introducción a la Nube Pública.</title>
+        <title>S3 Policies - Introducción a la Nube Pública.</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#amazon-simple-storage-service-s3-o-buckets" class="md-skip">
+        <a href="#s3-policies" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              S3
+              S3 Policies
             
           </span>
         </div>
@@ -597,32 +597,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    S3
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="6_S3.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="6_S3.html" class="md-nav__link">
         
   
   
@@ -633,62 +611,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#caracteristicas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Características.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#casos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Casos de uso.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tipos-de-s3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tipos de S3:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#politica-de-ciclo-de-vida" class="md-nav__link">
-    <span class="md-ellipsis">
-      Política de Ciclo de Vida.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -721,10 +643,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="12_Policies.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    S3 Policies
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="12_Policies.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -735,6 +679,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permiso-de-lectura-por-usuario-iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permiso de Lectura por usuario IAM.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permiso-de-lectura-y-escritura-por-rolgrupo-iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permiso de lectura y escritura por rol/grupo IAM.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Denegar todo el acceso excepto a ciertas direcciones IP.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denegar-acceso-durante-ciertas-horas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Denegar acceso durante ciertas horas.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permitir acceso solo a los objetos con la etiqueta "public".
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permitir acceso solo a aquellas máquinas que vengan de cierta red (VPC).
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -844,100 +862,125 @@
 
 
 
-<div><h1 id="amazon-simple-storage-service-s3-o-buckets">Amazon Simple Storage Service (S3) o Buckets.<a class="headerlink" href="#amazon-simple-storage-service-s3-o-buckets" title="Permanent link">¶</a></h1>
-<p>Servico de almacenamiento de objetos que pueden ser accedidos a través de una URL.</p>
+<div><h1 id="s3-policies">S3 Policies.<a class="headerlink" href="#s3-policies" title="Permanent link">¶</a></h1>
+<h2 id="permiso-de-lectura-por-usuario-iam">Permiso de Lectura por usuario IAM.<a class="headerlink" href="#permiso-de-lectura-por-usuario-iam" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOnlyUser",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::xxxxxxxxxxxx:user/Miguelito"
+      },
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::mi-bucket-unico/*"
+    }
+  ]
+}
+</code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">EFS vs S3</p>
-<p></p><center>
-<strong>A diferencia de EFS un almacenamiento de S3 puede ser accedido desde cualquier parte, mientras que los EFS solo pueden ser accedidos por ECS de la misma región.</strong>
-</center>
+<p class="admonition-title">Las xxxxxxxx del arn del usuario hacen referencia a su ID en AWS.</p>
 </div>
-<center>
-<figure>
-<img src="imagenes/s3/18.png" width="800">
-</figure>
-</center>
-
-<div class="admonition note">
-<p class="admonition-title">Programación</p>
-<p></p><center>
-<strong>Al ser accesibles desde una URL también pueden ser accedidos desde el código de nuestros programas.</strong>
-</center>
+<h2 id="permiso-de-lectura-y-escritura-por-rolgrupo-iam">Permiso de lectura y escritura por rol/grupo IAM.<a class="headerlink" href="#permiso-de-lectura-y-escritura-por-rolgrupo-iam" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadWriteForRole",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::111122223333:role/DesarrolloWeb"
+      },
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::mi-bucket-unico/*"
+    }
+  ]
+}
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">El permiso de PutObject es un permiso de escritura.</p>
 </div>
-<h2 id="caracteristicas">Características.<a class="headerlink" href="#caracteristicas" title="Permanent link">¶</a></h2>
-<ul>
-<li>El <strong>nombre debe ser único en todo AWS</strong>.</li>
-<li>Puede almacenar cantidades de <strong>datos ilimitadas</strong>.</li>
-<li>Un mismo objeto no puede pesar más de 5TB.</li>
-<li>
-<p>Todos los objetos guardados cuentan con <mark class="critic"><strong>una clave, un ID de versión, un valor</strong></mark>, metadatos y subrecursos.</p>
-<p>💥 La <strong>clave</strong> es el nombre con el cual puedes descargar el fichero o con el que lo guardas en el bucket.</p>
-<p>💥 El <strong>ID de versión</strong> se usa porque podemos almacenar diferentes versiones, por ejemplo de un documento.</p>
-<p>💥 El <strong>valor</strong> es el contenido.</p>
-<p>💥 Los <strong>metadatos</strong> pueden ser creados por los usuarios o por el propio sistema de AWS para la gestión del objeto.</p>
-</li>
-<li>
-<p>Por defecto los S3 se <strong>replican automáticamente</strong> en diferentes zonas de la misma región.</p>
-</li>
-<li>
-<p>Se cobra por el <strong>tráfico de descarga</strong> desde el cubo y por el <strong>almacenamiento</strong> en si.</p>
-<p>💥<a href="https://aws.amazon.com/es/s3/pricing/">Precios S3 en España.</a></p>
-</li>
-<li>
-<p>Son más lentos que el almacenamiento en un EBS.</p>
-</li>
-</ul>
-<div class="admonition danger">
-<p class="admonition-title">Almacenamiento por objetos.</p>
-<p></p><center>
-<ins class="critic"><strong>Un objeto no puede ser modificado desde el propio S3</strong></ins>. Si quiero modificar un documento debo descargarlo, modificarlo y volver a subirlo a S3.
-</center>
+<h2 id="denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip">Denegar todo el acceso excepto a ciertas direcciones IP.<a class="headerlink" href="#denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowOnlyFromOffice",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": ["arn:aws:s3:::mi-bucket-unico", "arn:aws:s3:::mi-bucket-unico/*"],
+      "Condition": {
+        "NotIpAddress": {"aws:SourceIp": "203.0.113.0/24"}
+      }
+    }
+  ]
+}
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Las acciones son los tipos de permisos (ejecución, lectura, escritura, etc). Por tant s3:* representa todos los tipos de permisos.</p>
 </div>
-<h2 id="casos-de-uso">Casos de uso.<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><strong>Aplicaciones</strong>: Para el almacenamiento de ciertos recursos de aplicaciones como: archivos multimedia de los usuarios o registros del servicio. </p>
-</li>
-<li>
-<p><strong>Webs Estáticas</strong>: Pueden alojar webs estáticas.</p>
-</li>
-<li>
-<p><strong>Copias de seguridad</strong>: Permite un almacenaje barato y accesible para almacenar y restaurar copias de seguridad.</p>
-</li>
-</ul>
-<h2 id="tipos-de-s3">Tipos de S3:<a class="headerlink" href="#tipos-de-s3" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><strong>S3 Estándar</strong>: Ofrece mayor rendimiento, se usa para acceso habitual de datos. Usado por aplicaciones web, servicios de contenido (vídeos), videojuegos, etc.</p>
-</li>
-<li>
-<p><strong>S3 Estándar - Acceso poco frecuente</strong>: Sigue siendo un acceso rápido, pero a los que se accede con menos frecuencia, pero que requieren acceso rápido cuando es necesario, por ejemplo una copia de seguridad reciente.</p>
-</li>
-<li>
-<p><strong>S3 One Zone – Acceso poco frecuente</strong>: Acceso también de alto rendimiento pero sin réplicas, usado en copias de seguridad secundarias.</p>
-</li>
-<li>
-<p><strong>S3 Intelligent-Tiering</strong>: Automáticamente mueve los objetos a diferentes tipos de Buckets (S3) dependiendo de los accesos o necesidades. Por ejemplo si un archivo no se accede en 30 días se pasa a un S3 de Acceso poco frecuente y viceversa si comienza a usarse de forma habitual. </p>
-</li>
-<li>
-<p><strong>S3 Glacier</strong>: Es un almacenamiento lento de bajo coste. Se usa para los datos que es más raros acceder. </p>
-</li>
-</ul>
-<center>
-<figure>
-<img src="imagenes/s3/17.png" width="800">
-</figure>
-</center>
-
-<h2 id="politica-de-ciclo-de-vida">Política de Ciclo de Vida.<a class="headerlink" href="#politica-de-ciclo-de-vida" title="Permanent link">¶</a></h2>
-<ul>
-<li>Dicta la vida útil de un archivo dependiendo del uso que se haga de él, por ejemplo pasando a uso poco frecuente y seguidamente a Glacier y finalmente para su eliminación,  reduciendo costes de forma automática.</li>
-</ul>
-<center>
-<figure>
-<img src="imagenes/s3/20.png" width="800">
-</figure>
-</center></div>
+<h2 id="denegar-acceso-durante-ciertas-horas">Denegar acceso durante ciertas horas.<a class="headerlink" href="#denegar-acceso-durante-ciertas-horas" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDuringWorkHours",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::mi-bucket-unico/*",
+      "Condition": {
+        "DateNotEquals": {
+          "aws:CurrentTime": [
+            "2025-11-08T08:00:00Z",
+            "2025-11-08T18:00:00Z"
+          ]
+        }
+      }
+    }
+  ]
+}
+</code></pre></div>
+<h2 id="permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public">Permitir acceso solo a los objetos con la etiqueta "public".<a class="headerlink" href="#permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowIfTaggedAsPublic",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::mi-bucket-unico/*",
+      "Condition": {"StringEquals": {"s3:ExistingObjectTag/Access": "public"}}
+    }
+  ]
+}
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Es habitual poner etiquetas en los recursos para luego poder aplicarles políticas a dichos objetos.</p>
+</div>
+<h2 id="permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc">Permitir acceso solo a aquellas máquinas que vengan de cierta red (VPC).<a class="headerlink" href="#permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AccessFromVPCEndpoint",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": ["arn:aws:s3:::mi-bucket-unico", "arn:aws:s3:::mi-bucket-unico/*"],
+      "Condition": {
+        "StringEquals": {"aws:SourceVpce": "vpce-1a2b3c4d"}
+      }
+    }
+  ]
+}
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Una VPC es una red virtual en AWS.</p>
+</div></div>
 
 
 
