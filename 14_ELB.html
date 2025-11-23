@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/cloud/12_Policies.html">
+        <link rel="canonical" href="https://salvasevero.github.io/cloud/14_ELB.html">
       
       
-        <link rel="prev" href="10_WebEstaticaS3.html">
+        <link rel="prev" href="13_AMI.html">
       
       
-        <link rel="next" href="11_aws_cli.html">
+        <link rel="next" href="15_ELB_Practica.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>S3 Policies - Introducción a la Nube Pública.</title>
+        <title>Conocimientos - Introducción a la Nube Pública.</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#s3-policies" class="md-skip">
+        <a href="#elastic-load-balancer-elb" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              S3 Policies
+              Conocimientos
             
           </span>
         </div>
@@ -478,10 +478,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -501,11 +499,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -521,7 +519,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Almacenamiento
@@ -647,32 +645,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    S3 Policies
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="12_Policies.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="12_Policies.html" class="md-nav__link">
         
   
   
@@ -683,80 +659,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#permiso-de-lectura-por-usuario-iam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permiso de Lectura por usuario IAM.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permiso-de-lectura-y-escritura-por-rolgrupo-iam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permiso de lectura y escritura por rol/grupo IAM.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Denegar todo el acceso excepto a ciertas direcciones IP.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#denegar-acceso-durante-ciertas-horas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Denegar acceso durante ciertas horas.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permitir acceso solo a los objetos con la etiqueta "public".
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permitir acceso solo a aquellas máquinas que vengan de cierta red (VPC).
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -920,8 +822,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -933,11 +837,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -953,7 +857,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Balanceador de Carga
@@ -964,10 +868,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="14_ELB.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Conocimientos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="14_ELB.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -978,6 +904,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-balanceadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de balanceadores.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1037,124 +992,63 @@
 
 
 
-<div><h1 id="s3-policies">S3 Policies.<a class="headerlink" href="#s3-policies" title="Permanent link">¶</a></h1>
-<h2 id="permiso-de-lectura-por-usuario-iam">Permiso de Lectura por usuario IAM.<a class="headerlink" href="#permiso-de-lectura-por-usuario-iam" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "ReadOnlyUser",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::xxxxxxxxxxxx:user/Miguelito"
-      },
-      "Action": ["s3:GetObject"],
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*"
-    }
-  ]
-}
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Las xxxxxxxx del arn del usuario hacen referencia a su ID en AWS.</p>
+<div><h1 id="elastic-load-balancer-elb">Elastic Load Balancer (ELB).<a class="headerlink" href="#elastic-load-balancer-elb" title="Permanent link">¶</a></h1>
+<ul>
+<li>
+<p>Se trata de un recurso que permite <strong>repartir el tráfico</strong> entre varios nodos:</p>
+<p>🔥 Dicho nodos pueden estar en diferentes <strong>zonas de disponibilidad</strong>.</p>
+<p>🔥 Dota al servicio de <strong>redundancia</strong> en caso de que uno de los recursos tenga algún problema.</p>
+<p>🔥 Permite una mayor eficiencia al estar trabajando varios nodos en vez de tenerlos parados únicamente con fines de respaldo.</p>
+</li>
+</ul>
+<figure>
+<img src="imagenes/elb/1.png" width="500">
+</figure>
+
+<div class="admonition warning">
+<p class="admonition-title">Si un servidor falla, el ELB (balanceador) deja de enviarle tráfico automáticamente.</p>
 </div>
-<h2 id="permiso-de-lectura-y-escritura-por-rolgrupo-iam">Permiso de lectura y escritura por rol/grupo IAM.<a class="headerlink" href="#permiso-de-lectura-y-escritura-por-rolgrupo-iam" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "ReadWriteForRole",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::111122223333:role/DesarrolloWeb"
-      },
-      "Action": ["s3:GetObject", "s3:PutObject"],
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*"
-    }
-  ]
-}
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">El permiso de PutObject es un permiso de escritura.</p>
+<div class="admonition note">
+<p class="admonition-title">AWS lo llama elastic porque se adapta automáticamente al volumen de tráfico.</p>
 </div>
-<h2 id="denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip">Denegar todo el acceso excepto a ciertas direcciones IP.<a class="headerlink" href="#denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowOnlyFromOffice",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": ["arn:aws:s3:::mi-bucket-unico", "arn:aws:s3:::mi-bucket-unico/*"],
-      "Condition": {
-        "NotIpAddress": {"aws:SourceIp": "203.0.113.0/24"}
-      }
-    }
-  ]
-}
-</code></pre></div>
+<h2 id="tipos-de-balanceadores">Tipos de balanceadores.<a class="headerlink" href="#tipos-de-balanceadores" title="Permanent link">¶</a></h2>
+<figure>
+<img src="imagenes/elb/9.png" width="1000">
+</figure>
+
+<h3 id="application-load-balancer-alb">Application Load Balancer (ALB).<a class="headerlink" href="#application-load-balancer-alb" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Balancea tráfico a nivel de aplicación (capa 7), como es el caso de <strong>HTTP / HTTPS</strong>.</p>
+</li>
+<li>
+<p>Permite enrutar el tráfico basándose en el contenido de la solicitud, como la URL. </p>
+</li>
+<li>
+<p>Usadas principalmente para servidores que almacenan páginas webs.</p>
+</li>
+</ul>
+<h3 id="network-load-balancer-nlb">Network Load Balancer (NLB).<a class="headerlink" href="#network-load-balancer-nlb" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Balancea tráfico a nivel de capa 4 del modelo OSI (<strong>TCP / UDP</strong>). </p>
+</li>
+<li>
+<p>Usado principalmente en servidores de <strong>juegos, IoT o streaming</strong>.</p>
+</li>
+</ul>
+<h3 id="gateway-load-balancer-glb">Gateway Load Balancer (GLB).<a class="headerlink" href="#gateway-load-balancer-glb" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Balancea tráfico a nivel de capa 3 del modelo OSI (<strong>IP</strong>). </p>
+</li>
+<li>
+<p>Usado en firewalls, sistemas de detección y prevención de intrusiones y sistemas de inspección profunda de paquetes.</p>
+</li>
+</ul>
 <div class="admonition tip">
-<p class="admonition-title">Las acciones son los tipos de permisos (ejecución, lectura, escritura, etc). Por tant s3:* representa todos los tipos de permisos.</p>
-</div>
-<h2 id="denegar-acceso-durante-ciertas-horas">Denegar acceso durante ciertas horas.<a class="headerlink" href="#denegar-acceso-durante-ciertas-horas" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowDuringWorkHours",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*",
-      "Condition": {
-        "DateNotEquals": {
-          "aws:CurrentTime": [
-            "2025-11-08T08:00:00Z",
-            "2025-11-08T18:00:00Z"
-          ]
-        }
-      }
-    }
-  ]
-}
-</code></pre></div>
-<h2 id="permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public">Permitir acceso solo a los objetos con la etiqueta "public".<a class="headerlink" href="#permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowIfTaggedAsPublic",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*",
-      "Condition": {"StringEquals": {"s3:ExistingObjectTag/Access": "public"}}
-    }
-  ]
-}
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Es habitual poner etiquetas en los recursos para luego poder aplicarles políticas a dichos objetos.</p>
-</div>
-<h2 id="permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc">Permitir acceso solo a aquellas máquinas que vengan de cierta red (VPC).<a class="headerlink" href="#permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AccessFromVPCEndpoint",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": ["arn:aws:s3:::mi-bucket-unico", "arn:aws:s3:::mi-bucket-unico/*"],
-      "Condition": {
-        "StringEquals": {"aws:SourceVpce": "vpce-1a2b3c4d"}
-      }
-    }
-  ]
-}
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Una VPC es una red virtual en AWS.</p>
+<p class="admonition-title">PRECIOS.</p>
+<p><a href="https://aws.amazon.com/elasticloadbalancing/pricing/">Tabla de precios de balanceadores de AWS</a></p>
 </div></div>
 
 

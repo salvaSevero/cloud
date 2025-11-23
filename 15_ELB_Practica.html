@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/cloud/12_Policies.html">
+        <link rel="canonical" href="https://salvasevero.github.io/cloud/15_ELB_Practica.html">
       
       
-        <link rel="prev" href="10_WebEstaticaS3.html">
+        <link rel="prev" href="14_ELB.html">
       
-      
-        <link rel="next" href="11_aws_cli.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>S3 Policies - Introducción a la Nube Pública.</title>
+        <title>Práctica Guiada - Introducción a la Nube Pública.</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#s3-policies" class="md-skip">
+        <a href="#practica-guiada-elb" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              S3 Policies
+              Práctica Guiada
             
           </span>
         </div>
@@ -478,10 +476,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -501,11 +497,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -521,7 +517,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Almacenamiento
@@ -647,32 +643,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    S3 Policies
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="12_Policies.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="12_Policies.html" class="md-nav__link">
         
   
   
@@ -683,80 +657,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#permiso-de-lectura-por-usuario-iam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permiso de Lectura por usuario IAM.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permiso-de-lectura-y-escritura-por-rolgrupo-iam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permiso de lectura y escritura por rol/grupo IAM.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Denegar todo el acceso excepto a ciertas direcciones IP.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#denegar-acceso-durante-ciertas-horas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Denegar acceso durante ciertas horas.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permitir acceso solo a los objetos con la etiqueta "public".
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permitir acceso solo a aquellas máquinas que vengan de cierta red (VPC).
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -920,8 +820,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -933,11 +835,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -953,7 +855,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Balanceador de Carga
@@ -987,10 +889,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="15_ELB_Practica.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Práctica Guiada
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="15_ELB_Practica.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1001,6 +925,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Práctica.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1037,124 +999,147 @@
 
 
 
-<div><h1 id="s3-policies">S3 Policies.<a class="headerlink" href="#s3-policies" title="Permanent link">¶</a></h1>
-<h2 id="permiso-de-lectura-por-usuario-iam">Permiso de Lectura por usuario IAM.<a class="headerlink" href="#permiso-de-lectura-por-usuario-iam" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "ReadOnlyUser",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::xxxxxxxxxxxx:user/Miguelito"
-      },
-      "Action": ["s3:GetObject"],
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*"
-    }
-  ]
-}
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Las xxxxxxxx del arn del usuario hacen referencia a su ID en AWS.</p>
+<div><h1 id="practica-guiada-elb">Práctica Guiada ELB.<a class="headerlink" href="#practica-guiada-elb" title="Permanent link">¶</a></h1>
+<h2 id="objetivo">Objetivo.<a class="headerlink" href="#objetivo" title="Permanent link">¶</a></h2>
+<p>Vamos a crear dos servicios web apache balanceados por un ELB.</p>
+<figure>
+<img src="imagenes/elb/2.png" width="400">
+</figure>
+
+<p><strong>Necsitaremos:</strong></p>
+<ul>
+<li><strong>2 x EC2</strong> en zonas de disponibilidad diferentes.</li>
+<li>Crear un <strong>Target Group</strong> donde se agrupen dichas máquinas.</li>
+<li>Crear un <strong>Application Load Balancer (ALB)</strong>. </li>
+</ul>
+<h2 id="practica">Práctica.<a class="headerlink" href="#practica" title="Permanent link">¶</a></h2>
+<h3 id="crear-una-maquina-ec2">Crear una máquina EC2.<a class="headerlink" href="#crear-una-maquina-ec2" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Crear una instancia teniendo en cuenta:</p>
+<p>🔥 <strong>AMI</strong>: Ubuntu.</p>
+<p>🔥 <strong>Red</strong>: Subred us-east-1a.</p>
+<p>🔥 <strong>Seguridad</strong>: Filtro de entrada que permita puertos 22, 80 y 443.</p>
+<p>🔥 <strong>Clave</strong>: vockey.</p>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">El resto de características de la EC2 pueden ser las que se generen por defecto.</p>
 </div>
-<h2 id="permiso-de-lectura-y-escritura-por-rolgrupo-iam">Permiso de lectura y escritura por rol/grupo IAM.<a class="headerlink" href="#permiso-de-lectura-y-escritura-por-rolgrupo-iam" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "ReadWriteForRole",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::111122223333:role/DesarrolloWeb"
-      },
-      "Action": ["s3:GetObject", "s3:PutObject"],
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*"
-    }
-  ]
-}
+<ul>
+<li>Configurar apache2 dentro de nuestro servidor web de ubuntu.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2
+sudo<span class="w"> </span>systemtctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>apache2
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">El permiso de PutObject es un permiso de escritura.</p>
+<h3 id="crear-una-ami">Crear una AMI.<a class="headerlink" href="#crear-una-ami" title="Permanent link">¶</a></h3>
+<ul>
+<li>Vamos a generar una AMI a partir de la EC2.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Es importante no generar dos nodos directamente en el punto anterior, pues las necesitamos en zonas de disponibilidad diferente.</p>
 </div>
-<h2 id="denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip">Denegar todo el acceso excepto a ciertas direcciones IP.<a class="headerlink" href="#denegar-todo-el-acceso-excepto-a-ciertas-direcciones-ip" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowOnlyFromOffice",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": ["arn:aws:s3:::mi-bucket-unico", "arn:aws:s3:::mi-bucket-unico/*"],
-      "Condition": {
-        "NotIpAddress": {"aws:SourceIp": "203.0.113.0/24"}
-      }
-    }
-  ]
-}
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Las acciones son los tipos de permisos (ejecución, lectura, escritura, etc). Por tant s3:* representa todos los tipos de permisos.</p>
+<div class="admonition important">
+<p class="admonition-title"><a href="13_AMI.html">Apuntes de como generar una AMI</a>.</p>
 </div>
-<h2 id="denegar-acceso-durante-ciertas-horas">Denegar acceso durante ciertas horas.<a class="headerlink" href="#denegar-acceso-durante-ciertas-horas" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowDuringWorkHours",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*",
-      "Condition": {
-        "DateNotEquals": {
-          "aws:CurrentTime": [
-            "2025-11-08T08:00:00Z",
-            "2025-11-08T18:00:00Z"
-          ]
-        }
-      }
-    }
-  ]
-}
-</code></pre></div>
-<h2 id="permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public">Permitir acceso solo a los objetos con la etiqueta "public".<a class="headerlink" href="#permitir-acceso-solo-a-los-objetos-con-la-etiqueta-public" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowIfTaggedAsPublic",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::mi-bucket-unico/*",
-      "Condition": {"StringEquals": {"s3:ExistingObjectTag/Access": "public"}}
-    }
-  ]
-}
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Es habitual poner etiquetas en los recursos para luego poder aplicarles políticas a dichos objetos.</p>
+<h3 id="generar-una-ec2-a-partir-de-la-ami-creada">Generar una EC2 a partir de la AMI creada.<a class="headerlink" href="#generar-una-ec2-a-partir-de-la-ami-creada" title="Permanent link">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Es importante esperarse a que la AMI termine de generarse.</p>
 </div>
-<h2 id="permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc">Permitir acceso solo a aquellas máquinas que vengan de cierta red (VPC).<a class="headerlink" href="#permitir-acceso-solo-a-aquellas-maquinas-que-vengan-de-cierta-red-vpc" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AccessFromVPCEndpoint",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": ["arn:aws:s3:::mi-bucket-unico", "arn:aws:s3:::mi-bucket-unico/*"],
-      "Condition": {
-        "StringEquals": {"aws:SourceVpce": "vpce-1a2b3c4d"}
-      }
-    }
-  ]
-}
-</code></pre></div>
+<ul>
+<li>
+<p>De la nueva EC2 creada es importante rellenar:</p>
+<p>🔥 <strong>AMI</strong>: Nuestra AMI creada en el punto anterior.</p>
+<p>🔥 <strong>Clave</strong>: vockey.</p>
+<p>🔥 <strong>Red</strong>: Subred us-east-1f</p>
+<p>🔥 <strong>Seguridad</strong>: Filtro de entrada que permita puertos 22, 80 y 443.</p>
+</li>
+</ul>
 <div class="admonition tip">
-<p class="admonition-title">Una VPC es una red virtual en AWS.</p>
+<p class="admonition-title">Recuerda que las zonas de disponibilidad de ambas EC2 deben ser diferentes.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Modificar una de las webs</p>
+<ul>
+<li>
+<p>Para poder ver claramente que el balanceador nos está enviando a cada una de las webs vamos a editarlas de forma diferente.</p>
+<p>🔥 Para ello editamos el fichero <strong>/var/www/html/index.html</strong>.</p>
+</li>
+</ul>
+</div>
+<ul>
+<li>Comprobaremos que efectivamente accedemos por web a cada una de las webs y que además una de ellas ha sido modificada.</li>
+</ul>
+<figure>
+<img src="imagenes/elb/3.png" width="900">
+</figure>
+
+<div class="admonition warning">
+<p class="admonition-title">HTTP</p>
+<p></p><center>
+    Recuerda que estamos accediendo por HTTP, por tanto en el navegador debes usar <strong>http://DNS_WEB.</strong>
+</center>
+</div>
+<h3 id="crear-un-target-group">Crear un Target Group.<a class="headerlink" href="#crear-un-target-group" title="Permanent link">¶</a></h3>
+<ul>
+<li>Vamos a crear un Target Group que incluya las dos instancias EC2 creadas.</li>
+</ul>
+<figure>
+<img src="imagenes/elb/4.png" width="900">
+</figure>
+
+<ul>
+<li>
+<p>Debemos tener en cuenta los siguientes parámetros:</p>
+<p>🔥 <strong>Nombre</strong>: Nombre del Grupo de Trabajo.</p>
+<p>🔥 <strong>Tipo</strong>: Va a ser un grupo de instancias EC2 de amazon.</p>
+<p>🔥 <strong>Protocolo</strong>: Va a ser HTTP pues las instancias van a trabajar con paquetes web HTTP.</p>
+<p>🔥 <strong>VPC</strong>: La VPC es la red, debemos usar la red en la que están creadas las instancias web.</p>
+</li>
+<li>
+<p>Pinchamos en siguiente y finalmente elegimos que instancias formarán parte del grupo.</p>
+</li>
+</ul>
+<figure>
+<img src="imagenes/elb/5.png" width="900">
+</figure>
+
+<h3 id="crear-un-balanceador-de-carga">Crear un Balanceador de Carga.<a class="headerlink" href="#crear-un-balanceador-de-carga" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Vamos al menú de Instancias y pinchamos en <strong>Balanceadores de Carga</strong>.</p>
+</li>
+<li>
+<p>Vamos a crear un ALB, es decir un balanceador de carga por capa de aplicación, como son HTTP y HTTPS.</p>
+<p>🔥 <strong>Esquema</strong>: Vamos a seleccionar Internet, pues las peticiones de nuestros clientes vienen de Internet.</p>
+<p>🔥 <strong>VPC</strong>: Importante seleccionar la VPC de nuestras máquinas así como su zona de disponibilidad.</p>
+<p><figure>
+<img src="imagenes/elb/6.png" width="1200">
+</figure></p>
+<p>🔥 <strong>Grupo Seguridad</strong>: Importante usar el grupo que permita SSH(22), HTTP(80) y HTTPS(443).</p>
+<p><figure>
+<img src="imagenes/elb/7.png" width="1000">
+</figure></p>
+<p>🔥 <strong>Grupo de Trabajo</strong>: Indicar el grupo de instancias que va afectar este balanceador.</p>
+</li>
+</ul>
+<h3 id="comprobar-correcto-funcionamiento">Comprobar correcto funcionamiento.<a class="headerlink" href="#comprobar-correcto-funcionamiento" title="Permanent link">¶</a></h3>
+<ul>
+<li>Una vez que se haya terminado de generar el balanceador de carga podemos acceder a su <strong>DNS</strong>.</li>
+</ul>
+<figure>
+<img src="imagenes/elb/8.png" width="1000">
+</figure>
+
+<div class="admonition important">
+<p class="admonition-title">Recuerda acceder por HTTP en el navegador.</p>
+</div>
+<ul>
+<li>Cada vez que refresquemos con <strong>F5</strong> estará enviando una petición a cada web.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Si hemos modificado una de las webs para sea diferente veremos la diferencia.</p>
 </div></div>
 
 
