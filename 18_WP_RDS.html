@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://salvasevero.github.io/cloud/14_ELB.html">
+        <link rel="canonical" href="https://salvasevero.github.io/cloud/18_WP_RDS.html">
       
       
-        <link rel="prev" href="13_AMI.html">
+        <link rel="prev" href="17_RDS.html">
       
-      
-        <link rel="next" href="15_ELB_Practica.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Conocimientos - Introducción a la Nube Pública.</title>
+        <title>WP y RDS - Introducción a la Nube Pública.</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#elastic-load-balancer-elb" class="md-skip">
+        <a href="#wordpress-con-rds" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conocimientos
+              WP y RDS
             
           </span>
         </div>
@@ -824,10 +822,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -839,11 +835,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -859,7 +855,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Balanceador de Carga
@@ -870,32 +866,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Conocimientos
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="14_ELB.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="14_ELB.html" class="md-nav__link">
         
   
   
@@ -906,35 +880,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tipos-de-balanceadores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tipos de balanceadores.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -975,8 +920,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -988,11 +935,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1008,7 +955,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             RDS
@@ -1042,10 +989,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="18_WP_RDS.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    WP y RDS
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="18_WP_RDS.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1056,6 +1025,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-wordpress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación del Wordpress.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-rds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de RDS.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de la Base de Datos.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-explicativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vídeo Explicativo.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1092,64 +1117,126 @@
 
 
 
-<div><h1 id="elastic-load-balancer-elb">Elastic Load Balancer (ELB).<a class="headerlink" href="#elastic-load-balancer-elb" title="Permanent link">¶</a></h1>
+<div><h1 id="wordpress-con-rds">Wordpress con RDS.<a class="headerlink" href="#wordpress-con-rds" title="Permanent link">¶</a></h1>
 <ul>
-<li>
-<p>Se trata de un recurso que permite <strong>repartir el tráfico</strong> entre varios nodos:</p>
-<p>🔥 Dicho nodos pueden estar en diferentes <strong>zonas de disponibilidad</strong>.</p>
-<p>🔥 Dota al servicio de <strong>redundancia</strong> en caso de que uno de los recursos tenga algún problema.</p>
-<p>🔥 Permite una mayor eficiencia al estar trabajando varios nodos en vez de tenerlos parados únicamente con fines de respaldo.</p>
-</li>
+<li>Vamos a generar un Wordpress con la Base de Datos externalizada en una red privada.</li>
 </ul>
 <figure>
-<img src="imagenes/elb/1.png" width="500">
+<img src="imagenes/rds/1.jpg" width="700">
 </figure>
 
+<h2 id="creacion-del-wordpress">Creación del Wordpress.<a class="headerlink" href="#creacion-del-wordpress" title="Permanent link">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Recuerda que puedes ayudarte de la práctica pasada de WP.</p>
+</div>
+<ul>
+<li>
+<p>Durante la instalación ten en cuenta lo siguiente:</p>
+<p>🔥 <strong>AMI</strong>: Usar la última versión de WP del marketplace community de Bitnami. </p>
+<p>🔥 <strong>IP elástica</strong>.</p>
+<p>🔥 <strong>Grupo de Seguridad</strong>: Permite el tráfico SSH, HTTP y HTTPS.</p>
+</li>
+</ul>
+<h2 id="creacion-de-rds">Creación de RDS.<a class="headerlink" href="#creacion-de-rds" title="Permanent link">¶</a></h2>
 <div class="admonition warning">
-<p class="admonition-title">Si un servidor falla, el ELB (balanceador) deja de enviarle tráfico automáticamente.</p>
+<p class="admonition-title">Recuerda apuntarte la contraseña y el usuario de la base de datos.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">AWS lo llama elastic porque se adapta automáticamente al volumen de tráfico.</p>
-</div>
-<h2 id="tipos-de-balanceadores">Tipos de balanceadores.<a class="headerlink" href="#tipos-de-balanceadores" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>Durante la instalación ten en cuenta lo siguiente:</p>
+<p>🔥 Crea una Base de Datos con gesto de <strong>MariaDB</strong>.</p>
+<p>🔥 Uso para <strong>Entorno de Pruebas</strong>.</p>
+<p>🔥 Usa el nombre para la instancia: BD-WP.</p>
+<p>🔥 Usuario y contraseña de la BD: admin / Usuario1234.</p>
+<p>🔥 <strong>Grupo de Seguridad</strong>: Permite el tráfico a 3306, pero solo desde origen del grupo de seguridad del wordpress.</p>
+<p>🔥 Sin IP pública.</p>
+</li>
+</ul>
+<h2 id="configuracion-de-la-base-de-datos">Configuración de la Base de Datos.<a class="headerlink" href="#configuracion-de-la-base-de-datos" title="Permanent link">¶</a></h2>
+<h3 id="recabar-el-punto-de-enlace-de-la-bd">Recabar el punto de enlace de la BD.<a class="headerlink" href="#recabar-el-punto-de-enlace-de-la-bd" title="Permanent link">¶</a></h3>
+<ul>
+<li>Necesitamos recabar el punto de enlace para que el Wordpress pueda acceder a leer/escribir en la base de datos.</li>
+</ul>
 <figure>
-<img src="imagenes/elb/9.png" width="1000">
+<img src="imagenes/rds/7.png" width="1000">
 </figure>
 
-<h3 id="application-load-balancer-alb">Application Load Balancer (ALB).<a class="headerlink" href="#application-load-balancer-alb" title="Permanent link">¶</a></h3>
+<h3 id="configuracion-base-de-datos">Configuración Base de Datos.<a class="headerlink" href="#configuracion-base-de-datos" title="Permanent link">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Todos los comandos se hacen desde la EC2 de Wordpress.</p>
+</div>
+<ul>
+<li>Acceder a la gestión de la base de datos.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#Nos conectamos a la base de datos y nos pedirá la contraseña.</span>
+mysql<span class="w"> </span>-h<span class="w"> </span><span class="s2">"PUNTO_DE_ENLACE"</span><span class="w"> </span>-P<span class="w"> </span><span class="m">3306</span><span class="w"> </span>-u<span class="w"> </span>admin<span class="w"> </span>-p
+</code></pre></div>
+<ul>
+<li>Crear la Base de Datos.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Es importante hacer uso de ";" para que surja efecto cada comando.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Crear la base de datos.</span>
+CREATE<span class="w"> </span>DATABASE<span class="w"> </span>wordpress<span class="p">;</span>
+
+<span class="c1">#Crear un usuario para gestionar esta base de datos.</span>
+<span class="c1">#El usuario debe ser wp_user que es el que usa wordpress por defecto.</span>
+CREATE<span class="w"> </span>USER<span class="w"> </span>wp_user<span class="w"> </span>IDENTIFIED<span class="w"> </span>BY<span class="w"> </span><span class="s1">'Usuario1234'</span><span class="p">;</span>
+
+<span class="c1">#Le damos privilegios al usuario.</span>
+GRANT<span class="w"> </span>ALL<span class="w"> </span>PRIVILEGES<span class="w"> </span>ON<span class="w"> </span>wordpress.*<span class="w"> </span>TO<span class="w"> </span>wp_user<span class="p">;</span>
+FLUSH<span class="w"> </span>PRIVILEGES<span class="p">;</span>
+</code></pre></div>
+<h3 id="configuracion-de-wordpress">Configuración de Wordpress<a class="headerlink" href="#configuracion-de-wordpress" title="Permanent link">¶</a></h3>
+<ul>
+<li>Vamos a cambiar la configuración de Wordpress para que el servicio apunte a la base de datos externa.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#Editamos el fichero de configuración.</span>
+sudo<span class="w"> </span>nano<span class="w"> </span>/bitnami/wordpress/wp-config.php
+</code></pre></div>
 <ul>
 <li>
-<p>Balancea tráfico a nivel de aplicación (capa 7), como es el caso de <strong>HTTP / HTTPS</strong>.</p>
-</li>
-<li>
-<p>Permite enrutar el tráfico basándose en el contenido de la solicitud, como la URL. </p>
-</li>
-<li>
-<p>Usadas principalmente para servidores que almacenan páginas webs.</p>
+<p>Dentro del fichero de configuración debemos modificar los parámetros:</p>
+<p>🔥 DB_NAME: Nombre de base de datos.</p>
+<p>🔥 DB_USER: Nombre administrador de la base de datos.</p>
+<p>🔥 DB_PASSWORD: Contraseña del administrador de la base de datos.</p>
+<p>🔥 DB_HOST: Nombre de la máquina que contiene la base de datos.</p>
 </li>
 </ul>
-<h3 id="network-load-balancer-nlb">Network Load Balancer (NLB).<a class="headerlink" href="#network-load-balancer-nlb" title="Permanent link">¶</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Es muy mala práctica guardar la contraseña DB_PASSWORD en texto plano.</p>
+</div>
+<h3 id="instalacion-de-wordpress">Instalación de Wordpress.<a class="headerlink" href="#instalacion-de-wordpress" title="Permanent link">¶</a></h3>
 <ul>
-<li>
-<p>Balancea tráfico a nivel de capa 4 del modelo OSI (<strong>TCP / UDP</strong>). </p>
-</li>
-<li>
-<p>Usado principalmente en servidores de <strong>juegos, IoT o streaming</strong>.</p>
-</li>
+<li>Accede vía web como hiciste en la práctica anterior y termina de instalar el servicio de Wordpress.</li>
 </ul>
-<h3 id="gateway-load-balancer-glb">Gateway Load Balancer (GLB).<a class="headerlink" href="#gateway-load-balancer-glb" title="Permanent link">¶</a></h3>
+<figure>
+<img src="imagenes/rds/8.png" width="500">
+</figure>
+
+<h3 id="comprobacion">Comprobación.<a class="headerlink" href="#comprobacion" title="Permanent link">¶</a></h3>
+<p>Vamos a comprobar que efectivamente los datos se están almacenando en la RDS nueva externa que hemos creado.</p>
 <ul>
-<li>
-<p>Balancea tráfico a nivel de capa 3 del modelo OSI (<strong>IP</strong>). </p>
-</li>
-<li>
-<p>Usado en firewalls, sistemas de detección y prevención de intrusiones y sistemas de inspección profunda de paquetes.</p>
-</li>
+<li>Accedemos al Wordpress y desde ahí ejecutamos:</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">PRECIOS.</p>
-<p><a href="https://aws.amazon.com/elasticloadbalancing/pricing/">Tabla de precios de balanceadores de AWS</a></p>
-</div></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Nos conectamos a la base de datos y nos pedirá la contraseña.</span>
+mysql<span class="w"> </span>-h<span class="w"> </span><span class="s2">"PUNTO_DE_ENLACE"</span><span class="w"> </span>-P<span class="w"> </span><span class="m">3306</span><span class="w"> </span>-u<span class="w"> </span>admin<span class="w"> </span>-p
+
+<span class="c1">#Accedemos a la base de datos de wordpress.</span>
+use<span class="w"> </span>database<span class="w"> </span>wordpress<span class="p">;</span>
+<span class="c1">#Seleccionamos todos los usuarios de wordpress en su tabla por defecto wp_users.</span>
+<span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>wp_users
+</code></pre></div>
+<ul>
+<li>Aquí ya deberíamos de ver el usuario que hemos creado durante la instalación web de Wordpress.</li>
+</ul>
+<figure>
+<img src="imagenes/rds/9.png" width="1200">
+</figure>
+
+<h2 id="video-explicativo">Vídeo Explicativo.<a class="headerlink" href="#video-explicativo" title="Permanent link">¶</a></h2>
+<iframe width="1335" height="751" src="https://www.youtube.com/embed/WUHzjhrS8tg" title="WP RDS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 
 
