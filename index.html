@@ -1034,39 +1034,23 @@
 
 
 <div><h1 id="computacion-en-la-nube">Computación en la Nube.<a class="headerlink" href="#computacion-en-la-nube" title="Permanent link">¶</a></h1>
-<p>Entendemos por <ins class="critic">Computación en la Nube</ins> hacer uso de infraestructura (almacenamiento, CPUS, RAM, ancho de banda) y servicios (bases de datos, firewalls, servicios DNS, ) de terceros para gestionar, <mark class="critic">bajo nuestra solicitud y pagando por uso</mark>.</p>
+<h2 id="que-entendemos-por-computacion-en-la-nube">¿Qué entendemos por computación en la nube?<a class="headerlink" href="#que-entendemos-por-computacion-en-la-nube" title="Permanent link">¶</a></h2>
+<p>Hacer uso de infraestructura (almacenamiento, CPUS, RAM, ancho de banda, electricidad, refrigeración) y servicios (bases de datos, firewalls, servicios DNS, balanceadores, ...) de terceros y habitualmente pagando por uso.</p>
 <div class="admonition tip">
 <p class="admonition-title">Ventajas</p>
 <p>💥 <strong>Escalabilidad</strong>: Si necesito ampliar o reducir cualquier componente lo puedo hacer a través de unos pocos clicks. Puedo incrementar/decrementar los recursos según mis necesidades: cantidad de servidores, balanceadores de carga, no estoy limitado por falta de espacio físico o por falta de stock al no haber previsto algún acontecimiento, etc.</p>
 <p>💥 <strong>Centralizado</strong>: Se configura cualquier servicio, independientemente del tipo o de la localización desde la misma interfaz.</p>
 <p>💥 <strong>Agilidad</strong>: Con una serie de clicks podemos levantar y configurar un servidor (No es necesario montarlo y cablearlo físicamente).</p>
 <p>💥 <strong>Control de Coste</strong>: Se paga por uso del servicio, por ejemplo pagaremos dependiendo del uso que hagamos del ancho de banda, o del tiempo que esté la CPU encendida.</p>
-<p>💥 <strong>Ahorro Inicial</strong>: Inversión inicial es mejor al no tener que comprar el hardware y parte del software. </p>
+<p>💥 <strong>Ahorro Inicial</strong>: Inversión inicial es menor al no tener que comprar el hardware y parte del software. </p>
 <p>💥 <strong>Menor Mantenimiento</strong>: No debes destinar recursos de tu empresa al mantenimiento de la infraestructura: Temperatura del CPD, redundancia del sistema eléctrico, mantenimiento del cableado, electricidad, etc.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Desventajas</p>
 <p>💥 Si no controlas bien tus servidores o si no diseñas una buena arquitectura en la nube el coste se puede disparar.</p>
 <p>💥 Necesitas de gente con conocimientos específicos de la plataforma para un despliegue eficiente y adecuado.</p>
-<p>💥 Los datos sensibles están almacenados en máquinas que realmente no son propiedad de la empresa, incluso puede que se encuentren en otro país y no se rigan por las mismas normativas, por ejemplo no es la misma normativa de protección de datos aquí que en USA.</p>
+<p>💥 Los datos sensibles están almacenados en máquinas que realmente no son propiedad de la empresa, incluso puede que se encuentren en otro país y no se rijan por las mismas normativas, por ejemplo no es la misma normativa de protección de datos aquí que en USA.</p>
 </div>
-<h2 id="openstack">OpenStack.<a class="headerlink" href="#openstack" title="Permanent link">¶</a></h2>
-<p>OpenStack es un software de <ins class="critic">código abierto</ins> que permite:</p>
-<ul>
-<li>
-<p>Crear y gestionar infraestructuras de nube privada y pública.  </p>
-</li>
-<li>
-<p>Proporciona herramientas para la gestión de recursos como computación, almacenamiento y redes, todo de manera escalable y flexible.</p>
-</li>
-</ul>
-<div class="admonition warning">
-<p><strong>OpenStack es el software por debajo que permite:</strong></p>
-<p>💥 Generar las instancias de máquinas virtuales usando diferentes recursos (CPU, RAM, disco, ...) de servidores físicos.</p>
-<p>💥 Manejar el almacenamiento asociado a cada máquina virtual.</p>
-<p>💥 Crear redes virtuales para asociar e interconectar las máquinas entre ellas y a través de Internet cuando sea necesario.</p>
-</div>
-<p>Existen otros software como OpenStack: VMware vSphere, Microsoft Azure Stack, Apache CloudStack, Proxmox VE, ...</p>
 <h2 id="modelos-y-servicios">Modelos y Servicios.<a class="headerlink" href="#modelos-y-servicios" title="Permanent link">¶</a></h2>
 <center>
 <figure>
@@ -1076,7 +1060,7 @@
 
 <ul>
 <li>
-<p><mark class="critic"><strong>IaaS (Infraestructura como Servicio)</strong></mark>: Ofrece recursos físisos (<ins class="critic"><strong>hardware</strong></ins>) accesibles desde Internet como servidores (RAM, Disco, CPU) además de la interconexión de red entre ellos.</p>
+<p><mark class="critic"><strong>IaaS (Infraestructura como Servicio)</strong></mark>: Ofrece recursos físicos (<ins class="critic"><strong>hardware</strong></ins>) accesibles desde Internet como servidores (RAM, Disco, CPU) además de la interconexión de red entre ellos. Por ello hablamos de que son recursos de infraestructura virtualizados.</p>
 </li>
 <li>
 <p><mark class="critic"><strong>PaaS (Plataforma como Servicio)</strong></mark>:  Es un entorno completo para el desarrollo, la ejecución y gestión de aplicaciones (<ins class="critic"><strong>Desarrollo Software</strong></ins>). Es decir, ya no solo estamos contratando el hardware si no que también nos gestionan el tener instalado un sistema operativo, un entorno de programación (IDE), las actualizaciones, los paquetes de programación necesarias, el despliegue de la base de datos, etc.</p>
@@ -1101,7 +1085,7 @@
 <p>Los servidores son propiedad de terceros (Amazon -AWS, Microsoft - Azure, Google).</p>
 </li>
 <li>
-<p>Se accede a dichos recurso a través de Internet (red pública).</p>
+<p>Se accede a dichos recursos a través de Internet (red pública).</p>
 </li>
 </ul>
 <div class="admonition example">
@@ -1144,13 +1128,12 @@
 <p>💥 Necesitas mucha más personal cualificado para el despliegue y mantenimiento de hardware/software.</p>
 </div>
 <div class="admonition danger">
-<p class="admonition-title">Nubes Privadas Virtuales</p>
-<p>Se pueden desplegar nubes privadas virtuales en nubes públicas.</p>
+<p class="admonition-title">Se pueden desplegar nubes privadas virtuales en nubes públicas.</p>
 </div>
 <h3 id="nubes-hibridas">Nubes Híbridas.<a class="headerlink" href="#nubes-hibridas" title="Permanent link">¶</a></h3>
 <p>Son aquellas organizaciones cuya parte de su lógica de negocio se encuentra en una nube pública y parte en una nube privada.</p>
-<h3 id="multicloud-networking">MultiCloud Networking.<a class="headerlink" href="#multicloud-networking" title="Permanent link">¶</a></h3>
-<p>Se habla de MultiCloud cuando una misma organización tiene servicios alojadas en diferentes nubes públicas, por ejemplo en AWS y Azure.</p>
+<h3 id="multicloud">MultiCloud.<a class="headerlink" href="#multicloud" title="Permanent link">¶</a></h3>
+<p>Se habla de MultiCloud cuando una misma organización tiene servicios alojados en diferentes nubes públicas, por ejemplo en AWS y Azure.</p>
 <div class="admonition tip">
 <p class="admonition-title">Ventajas</p>
 <p>💥 Puede aportar redundancia si hay algún problema con una de las nubes públicas.</p>
@@ -1160,6 +1143,60 @@
 <div class="admonition warning">
 <p class="admonition-title">Desventajas</p>
 <p>💥 Necesitas gente con conocimientos de más de una nube pública, lo que hace que la gestión pueda ser más complicada.</p>
+</div>
+<h3 id="resumen">Resumen.<a class="headerlink" href="#resumen" title="Permanent link">¶</a></h3>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">☁️ Tipo</th>
+<th style="text-align: center;">💡 Idea principal</th>
+<th style="text-align: center;">📌 Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Nube pública</strong></td>
+<td style="text-align: center;">Utiliza recursos de un proveedor cloud</td>
+<td style="text-align: center;">AWS</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Nube privada</strong></td>
+<td style="text-align: center;">Una organización dispone de su propia nube</td>
+<td style="text-align: center;">OpenStack</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Nube híbrida</strong></td>
+<td style="text-align: center;">Combino nube pública y privada</td>
+<td style="text-align: center;">CPD propio + AWS</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Multicloud</strong></td>
+<td style="text-align: center;">Utilizo varias nubes públicas</td>
+<td style="text-align: center;">AWS + Azure</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="openstack">OpenStack.<a class="headerlink" href="#openstack" title="Permanent link">¶</a></h2>
+<p>OpenStack es un software de <ins class="critic">código abierto</ins> que permite:</p>
+<ul>
+<li>
+<p>Crear y gestionar infraestructuras de nube privada y pública.  </p>
+</li>
+<li>
+<p>Proporciona herramientas para la gestión de recursos como computación, almacenamiento y redes, todo de manera escalable y flexible.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p><strong>OpenStack es el software por debajo que permite:</strong></p>
+<p>💥 Generar las instancias de máquinas virtuales usando diferentes recursos (CPU, RAM, disco, ...) de servidores físicos.</p>
+<p>💥 Manejar el almacenamiento asociado a cada máquina virtual.</p>
+<p>💥 Crear redes virtuales para asociar e interconectar las máquinas entre ellas y a través de Internet cuando sea necesario.</p>
+<p>💥 ...</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Existen alternativas a OpenStack: VMware vSphere, Microsoft Azure Stack, Apache CloudStack o Proxmox VE</p>
 </div></div>
 
 
